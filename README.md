@@ -1,12 +1,12 @@
 # Azure Pipelines
 Master
 
-[![Build Status](https://dev.azure.com/SW709E19/SW709E19/_apis/build/status/SW709E19.Report?branchName=master)](https://dev.azure.com/SW709E19/SW709E19/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/SW814F20/SW814F20/_apis/build/status/SW814F20.Report?branchName=master)](https://dev.azure.com/SW814F20/SW814F20/_build/latest?definitionId=1&branchName=master)
 
 
 Develop
 
-[![Build Status](https://dev.azure.com/SW709E19/SW709E19/_apis/build/status/SW709E19.Report?branchName=develop)](https://dev.azure.com/SW709E19/SW709E19/_build/latest?definitionId=1&branchName=develop)
+[![Build Status](https://dev.azure.com/SW814F20/SW814F20/_apis/build/status/SW814F20.Report?branchName=develop)](https://dev.azure.com/SW814F20/SW814F20/_build/latest?definitionId=1&branchName=develop)
 
 # P8 Mobility
 
