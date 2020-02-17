@@ -1,0 +1,23 @@
+# Raport build
+variables:
+  projectDirectory: .
+pool: dockerpool
+jobs:
+  - job: PDFLatex
+    steps:
+      - task: CmdLine@2
+        displayName: 'Linter'
+        inputs:
+          script: 'php $(projectDirectory)/linter.php'
+      - task: ShellScript@2
+        displayName: 'Latex Compile'
+        inputs:
+          scriptPath: '$(projectDirectory)/pdfcompile.sh'
+      - task: CopyFiles@2
+        inputs:
+          contents: '**/*.pdf'
+          targetFolder: '$(build.artifactStagingDirectory)'
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          artifactName: PDF

@@ -1,0 +1,27 @@
+\input{preamb}
+\input{config}
+
+\begin{document}
+
+\begin{titlingpage}
+  \include{titlepage}
+  \input{Titelblad.tex}
+\end{titlingpage}
+
+\input{Introduction/PrefaceCtrl.tex}
+\tableofcontents
+\chapter{Introduction}\label{par:introduction}
+\input{Introduction/IntroductionCtrl.tex}
+
+\begingroup
+	\raggedright
+	%\bibliographystyle{bibtex/harvard}
+  \printbibliography
+\endgroup
+\cleardoublepage
+
+\begin{appendices}
+  \chapter{Appendix}\label{PART:Appendix}
+  \input{Appendix/AppendixCtrl}
+\end{appendices}
+\end{document}
