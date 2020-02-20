@@ -21,3 +21,6 @@ jobs:
         inputs:
           pathtoPublish: '$(Build.ArtifactStagingDirectory)'
           artifactName: PDF
+
+      - publish: $(System.DefaultWorkingDirectory)/report/main.pdf
+        artifact: main.pdf
