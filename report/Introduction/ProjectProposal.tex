@@ -1,9 +1,44 @@
 \section{Project Proposal}
-Neurospace ApS \cite{Neurospace} is a software consultancy company that specialises in machine learning.
-The company consists of three employees and have been operating since late 2018.
-Neurospace plans to operate in different countries within the EU but their customers are primarily located in Denmark.
+\subsection{Formål}
+I agile processer er der stor fokus på princippet om at kravspecifikationer ikke er noget vi laver, men derimod noget vi opdager og forhandler igennem leve tiden af projektet.
+For at faciliter dette har forskellige processer, forskellige implementationer af dette.
+Hvor Scrum arbejder med en så kaldt "Product Owner", som er en repræsentation af kunden, enten i form af kunden selv eller en person med viden og autoritet til at tage valg på vegne af kunden.
+I eXtreme Programming(XP) arbejder de med "Onsite Customer", hvilket betyder at kunden selv skal befinde sig i samme rum som udvikleren og være til rådighed for at svare på spørgsmål og hjælpe med at bedømme kvaliteten af løsningerne.
+\\\\
+Fælles for disse to implementationer er der et forholdsvis stort problem. Begge kræver at kunden forlader sit normale domæne og placerer sig i det miljø som udviklerne (løsningsskaberne) befinder sig i.
+Dette betyder at kunden eller problem domæne eksperten, nu skal forsøge at frembringe minder omkring hvordan problem domænet tager form.
+Eftersom mange detaljer fra et problem domæne ofte kan fremtræde som "tacit" viden, kan det være svært for en domæne ekspert at overføre løsningsforslagene over på det reelt problem i domænet.
+Det optimale ville være hvis domæne eksperten kunne udføre sin rolle som f.eks. en Product Owner, mens han eller hun bevægede og færdes i sit domæne.
+Dette ville få kvaliteten af forespørgsler og feedback til løsningsforslagene til at stige markant.
+Foruden dette er det et kendt problem i kunderelationer at kunder har svært ved at udpege eller sætte ord på hvad de gerne vil have, men meget nemmere for dem at udtrykke hvad de IKKE vil have.
+\\\\
+Et fænomen som Morten fra denne gruppe har arbejdet meget med i sine 5 års erfaring som designer.
+I design verden ville man ofte imødekomme denne problemstilling ved at præsentere minimum 3 foreslag for kunden, da det giver kunden muligheden for at udpege alt det som de ikke kan lide, dermed kan designeren få et bedre indblik ind i hvad det er de kan lide.
+\\\\
+Med disse to problemer omkring inddragelse af kunden i udviklingsprocessen, vil det være spændende at kigge på hvilke andre teknikker man kunne gøre brug af som kunne tillade kunden at formulerer sine behov, imens de bevæger sig i deres domæne og stadig blive præsenteret for forskellige løsningsmodeller som kan hjælpe dem med at informere udviklerne omkring hvad de præcist ønsker.
 
-Neurospace’s current primary focus is to provide predictive maintenance solutions for manufacturing companies in order to increase uptime and reduce operational costs.
-One of the issues that Neurospace experiences are their customers’ concerns  regarding the high upfront costs associated with a predictive maintenance system since Neurospace cannot guarantee the system’s success rate beforehand.
-The manufacturing companies would therefore have to make a substantial investment in predictive maintenance equipment with the risk of the data analytics not providing accurate enough predictions for the system to be cost beneficial.
-Neurospace’s project proposal, see \autoref{app:ProjectProposal}, was therefore to develop a solution which can demonstrate the possible savings a company may experience if they choose to implement a predictive maintenance strategy without having to make a substantial upfront investment.
+\subsection{Udførsel}
+Vi vil forsøge at skabe en mobilapplikation som vil tillade kunden at udtrykke sine behov i en intuitiv og præcist teknik, som samtidigt ville kunne oversættes til et sæt af "acceptance tests" der vil tillade udviklerne at verificer at de har levet op til kundens ønsker.
+Dette værktøj skal også tillade udviklerne at frembringe alternative løsningsmodeller, ikke i form af programmeringsimplementationer, men i samme miljø som kunden selv frembringer ønskerne.
+Dette vil så tillade kunden at gennemskue de forskellige løsninger til problemet da det bliver formuleret i samme miljø som kunden selv bruger.
+\\\\
+Tanken er at udvikle en platform der benytter "Finite State Automata" til at beskrive behov, krav og ønsker til et system, på en måde så det er brugbart for folk uden formel viden om disse.
+At benytte Finite State Automata's vil også tillade at man automatisk igennem algoritmer ville kunne belyse fejl eller "oversights" i det opstillede krav/ønske.
+Brugen af "Finite State Automata" skal muliggøre at alle tilstande for applikationen er kendte og man vil kunne garantere at applikationen ikke vil kunne ende i en uønsket tilstand.
+Ydermere ville det også tillade udviklerne med langt større viden omkring Finite State Automata's at kommunikerer alternative løsningsmodeller på en måde som er gennemskuelig og forståelig for kunden.
+Disse State Automata's skulle så kunne omdannes til acceptance tests igennem en automatiserede kode generation.
+Dette vil i sidste ende tillade udvikleren en stører ro i maven, for at det udviklede produkt lever op til kundens ønsker, samt gøre den nemmere for denne at udvikle det korrekt første gang.
+\\\\
+Vi vil i vores projekt udføre et eksperiment med dette forslag som en løsning på de før nævnte problemstillinger ved at tage del i Giraf projektet på Aalborg Universitet.
+Vi vil udvælge et sæt af grupper og placerer os som kommunikationsled imellem udviklingsteamet og Product Owner.
+Her vil vi starte med at lave papir prototype af vores ide og se hvordan kommunikationen og forståelsen bliver påvirket imellem kunde og udvikler.
+Vi vil derefter manuelt omskrive disse papir udgave til "acceptance tests" i projektet og se hvordan det at have en automatiseret "Definition of Done", påvirker udviklernes evne til at indfrie kundens ønsker.
+Ved kun at bruge et subset af grupperne fra Giraf, vil vi kunne sammenligne vores grupper med de "normale" grupper med hensyn til "throughput" af "Story Points" og kvaliteten af koden, med hensyn til mængende af fundne "bugs" i koden før release.
+Vi ønsker ligledes også at evaluere på hvor lang tid den enkelte gruppe bruger på at løse et "issue" modregnet mængden af "Story Points".
+
+\subsection{Forventet bidragelser fra projektet}
+\begin{itemize}
+    \item Hvordan kan man lave en letforståelig GUI til at lave Finite State Automata's?
+    \item Hvordan kan de egenskaber en Finite State Automata besidder hjælpe kunden med at lave indsigelser og innovation på krav som måske ikke er helt gennemtænkt?
+    \item Hvordan kan automatiserede acceptance tests og præcist defineret krav hjælpe udviklere med at levere høj kvalitet inden for en rimelig tidsramme?
+\end{itemize}
