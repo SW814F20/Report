@@ -1,4 +1,4 @@
-The Manifesto for Agile Software Development states a set of values for what developers should strive for. These values are: \\
+The Manifesto for Agile Software Development states a set of values for what developers should strive for. These values are \cite{theAgileManifesto}: \\
 \noindent\hrulefill\par
 \noindent\makebox[\textwidth][c]{%
     \begin{minipage}[c]{0,8\textwidth}
@@ -7,10 +7,10 @@ The Manifesto for Agile Software Development states a set of values for what dev
 \textbf{Customer collaboration} over contract negotiation \\
 \textbf{Responding to change} over following a plan \\
 \end{minipage}} \\
-What has shown a challenge with Agile Software Development is the \textbf{Customer collaboration} \cite{Hoda2011TheIO}. 
-To understand why this is a challenge it is important to understand what the Manifesto for Agile Software Development refers to with customer collaboration. 
+What has shown a challenge with Agile Software Development is the \textbf{Customer collaboration} \cite{Hoda2011TheIO}.
+To understand why this is a challenge it is important to understand what the Manifesto for Agile Software Development refers to with customer collaboration.
 The value set of the manifesto is based on a set of 12 principles, and these principles can supply some context into what the meaning of Customer collaboration might be.
-We have chosen to bring forth a subset of the, what we consider the most relevant principles, regarding the challenge of Customer collaboration, these are:
+We have chosen to bring forth a subset of the, what we consider the most relevant principles, regarding the challenge of Customer collaboration, these are \cite{theAgileManifesto}:
 
 \begin{itemize}
   \item Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
@@ -19,44 +19,47 @@ We have chosen to bring forth a subset of the, what we consider the most relevan
 \end{itemize}
 
 These three principles all require collaboration with the customer.
+
+\section{Speculations on Agile's Impact}
 We will now reason about the principles and try to suggest what implications they might put on the customer and the developers.
 
-\textbf{Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.} 
-This principle indicates that the developers should deliver vertical slices of the software to the customer as soon as possible and continuously. 
+\textbf{Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.}
+This principle indicates that the developers should deliver vertical slices of the software to the customer as soon as possible and continuously.
 We assume that this will allow the developers to validate the software early and learn whether the software is correct in terms of actual usage instead of in terms of specified requirements.
 If our assumption is correct, this would mean that the customer would have to use unfinished or unstable software.
-Using unfinished software could mean a massive time investment for the customer, since they might have to do everything twice, once in their current system on which their operation still depends upon and once in the new system in order to give feedback to the developers. 
+Using unfinished software could mean a massive time investment for the customer, since they might have to do everything twice, once in their current system on which their operation still depends upon and once in the new system in order to give feedback to the developers.
 Using unstable software could not only mean a time investment but also increase the frustration towards the new software.
 This time investment and frustration could come from the fact that software might behave unexpectable, such as crashing when the customer tries to persist data. The customer then might try to save data multiple times and get frustrating with the software and the process as a whole.
 
 \textbf{Business people and developers must work together daily throughout the project.}
-This principle has an obvious implication on the customer. 
-The customer has to dedicate time throughout the day to work together with the developers of the project. 
+This principle has an obvious implication on the customer.
+The customer has to dedicate time throughout the day to work together with the developers of the project.
 Given the customer has daily responsibilities regarding their own business, one can imagine this to be difficult.
 
 \textbf{The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.}
 Given the two previous principles, this brings along a rather big implication.
-Because not only does the customer need to invest a significant time into helping the developers, they also need to do it face-to-face, in other terms, they need to be in the same location as the developers. 
-This means that when the customer needs to reason about requirements and features they need to do it away from the context and domain of said requirements and features. 
+Because not only does the customer need to invest a significant time into helping the developers, they also need to do it face-to-face, in other terms, they need to be in the same location as the developers.
+This means that when the customer needs to reason about requirements and features they need to do it away from the context and domain of said requirements and features.
 One can imagine how difficult it must be to reason about requirements and features for a system when alienated from the context and domain of the said system.
 
-We have looked at what the values of the Manifesto of Agile Software Development are and speculated in how that can make it difficult for customers to participate in such an environment. 
+\section{Reality of Customer Collaboration}
+We have looked at what the values of the Manifesto of Agile Software Development are and speculated in how that can make it difficult for customers to participate in such an environment.
 We will now look at whether our speculations reflect the reality among Agile Software Teams and their customers.
 
-In the research paper "The impact of inadequate customer collaboration on self-organizing Agile teams" by Hoda, Noble and Marshall \cite{Hoda2011TheIO} they followed 30 Agile practitioners from 16 different organizations across New Zealand and India over a 3-year period. 
-Their objective was to study "the importance of adequate customer involvement in Agile projects, and the impact of different levels of customer involvement on real-life agile projects". 
-In their research, they identified a set of reasons for why it has shown difficult to involve customers in an agile project, reasons such as: "skepticism and hype, the distance factor, lack of time commitment, dealing with large customers, fixed-bid contracts, and ineffective customer representatives". 
+In the research paper "The impact of inadequate customer collaboration on self-organizing Agile teams" by Hoda, Noble and Marshall \cite{Hoda2011TheIO} they followed 30 Agile practitioners from 16 different organizations across New Zealand and India over a 3-year period.
+Their objective was to study "the importance of adequate customer involvement in Agile projects, and the impact of different levels of customer involvement on real-life agile projects".
+In their research, they identified a set of reasons for why it has shown difficult to involve customers in an agile project, reasons such as: "skepticism and hype, the distance factor, lack of time commitment, dealing with large customers, fixed-bid contracts, and ineffective customer representatives".
 They also identified the impact of lacking customer involvement in a project, such as: "pressure to over-commit, problems in gathering and clarifying requirements, problems in prioritizing requirements, problems in securing feedback, loss of productivity, and in extreme cases, business loss". \cite{Hoda2011TheIO}
 
-Throughout the research paper by Hoda et al., they present statements from the participants that provide vital insights into the difficulties of customer involvement. 
+Throughout the research paper by Hoda et al., they present statements from the participants that provide vital insights into the difficulties of customer involvement.
 The fact is that agile software development requires more customer involvement than traditional software development (read plan-driven), the participants answered: \\
-"Commitment for that time from business ... that's something that is not normally there in a [traditional] software development project because [customers] throw [the project] over the wall and do not have to worry about it for six months!" and "Sometimes [customers] only want to come back and see in six months what happened [in development]." \cite{Hoda2011TheIO}. \\ 
-From this, we can learn that the customers' understanding of what it means to "order" a new software system is not aligned with the needs of an agile team. 
-Another participant in the research said that "To get the client involved in the process I think is the most difficult part of Agile."\cite{Hoda2011TheIO}. 
-This statement shows that the problem is not a trivial problem. 
-Regarding the lack of time commitment from the customers the participants had statements such as "[customers] can talk about high level 'I want to have Taj Mahal' but of granite or marble? They do not even have time to talk about that!"\cite{Hoda2011TheIO}. 
-This tells us that the customers have a clear end-goal of what the system should be, in their heads, but they do not have the time to clarify or they do not find it necessary to do. 
-This could be caused by customers being domain experts and thinking that it is obvious what they need or it could be that they simply do not have the time to sit down and explain it. 
+"Commitment for that time from business ... that's something that is not normally there in a [traditional] software development project because [customers] throw [the project] over the wall and do not have to worry about it for six months!" and "Sometimes [customers] only want to come back and see in six months what happened [in development]." \cite{Hoda2011TheIO}. \\ \\
+From this, we can learn that the customers' understanding of what it means to "order" a new software system is not aligned with the needs of an agile team.
+Another participant in the research said that "To get the client involved in the process I think is the most difficult part of Agile."\cite{Hoda2011TheIO}.
+This statement shows that the problem is not a trivial problem.
+Regarding the lack of time commitment from the customers the participants had statements such as "[customers] can talk about high level 'I want to have Taj Mahal' but of granite or marble? They do not even have time to talk about that!"\cite{Hoda2011TheIO}.
+This tells us that the customers have a clear end-goal of what the system should be, in their heads, but they do not have the time to clarify or they do not find it necessary to do.
+This could be caused by customers being domain experts and thinking that it is obvious what they need or it could be that they simply do not have the time to sit down and explain it.
 Other issues regarding requirements identified in the research paper are:
 \begin{itemize}
  \item Customers are slow to provide clarifications, leaving features to queue up in a waiting state
@@ -66,9 +69,9 @@ Other issues regarding requirements identified in the research paper are:
 
 Another issue with customer involvement regarding feedback was that it showed difficult to get customer feedback, and only when the system was deployed and in use, the customer would start to complain.
 
-\section{The challenge}\label{subsec:theChallenge}
-The things discussed in~\autoref{par:motivation} shows that customer involvement and collaboration at the level that Agile Development requires is a non-trivial problem. 
-It also shows that it is vital to the success of the project to handle this problem. 
+\section{The Challenge}\label{subsec:theChallenge}
+The things discussed in~\autoref{par:motivation} shows that customer involvement and collaboration at the level that Agile Development requires is a non-trivial problem.
+It also shows that it is vital to the success of the project to handle this problem.
 Therefore we will set the challenge of this report as: \\
 \noindent\hrulefill\par
 \noindent\makebox[\textwidth][c]{%
