@@ -1,0 +1,163 @@
+\section{Ecology Interfaces}
+This section will cover the process in finding the Ecology Interfaces, which we might use in the project, and rank them.
+
+The idea in Ecology is to get an idea of external services, external artifacts, external repositories and external people, which might help us to solve the problem at hand.
+After we have gathered all of the points, we should filter them, meaning that we need to use some sort of metrics to rank them, to get an overview of which points might be better suited for us, than others.
+This should not be interpreted as, we do not use them or do not care about them, but more as we know they are there, and they might be useful, however, not at the time.
+
+Mentioned before we have four categories we need to find out, which are all externals.
+The \textbf{external service} is services that we can use, without modification, which in the end, will make our solution easier to do, as we need to do less work.\\
+The \textbf{external artifacts}, could be equipment, sensors or actuators which we can access via a trivial interface, meaning that we should not do much work, to get the data from a sensor, because of the interface.
+Here an interface can be an API\\
+The \textbf{external repositories} could be for collecting and storing information, that can be accessed via a trivial interface.\\
+The last thing we should look at is \textbf{external people}.
+These people are some that might be interfaced with by the system.
+These people can be:
+
+\begin{itemize}
+    \item Specific persons
+    \item Categories of people
+    \item Stakeholders
+    \item Authorities
+    \item Social or Professional networks
+    \item Organizations
+\end{itemize}
+
+\subsection{Evaluation of points}
+
+Now we need to find points to each of the four categories.
+In our process, we look at one category at a time and then brainstormed to get ideas of what should be there.
+When we got an idea, we would talk about it, and why it should be there.
+
+For the external services, we have these points:
+
+\begin{itemize}
+    \item Mobile Platform
+    \item Email Platform
+    \item Web Platform
+    \item Board
+    \item Calendar
+    \item Chat 
+\end{itemize}
+
+For the external artifacts, we have these points
+
+\begin{itemize}
+    \item Mobile
+    \item Database
+    \item Smartwatch
+\end{itemize}
+
+For the external repositories, we have these points
+
+\begin{itemize}
+    \item Github
+\end{itemize}
+
+For the external people, we have these points
+
+\begin{itemize}
+    \item Mediator
+    \item Customer
+    \item Developer
+    \item Agile coach
+\end{itemize}
+
+After we got all of these points, we need to filter them.
+This can be done in different ways.
+We can use \textbf{Single Idea Evaluation} and \textbf{Comparative Idea Evaluation}.
+As the name states, the single idea is to evaluate a single idea, and comparative is where we take ideas that are alternatives to each other and see what idea seems to be the best.
+We will use both of these evaluation techniques.
+We use the single idea evaluation to get a better understanding of the idea, and then we will use comparative idea evaluation, to rank the different ideas against each other, to get this ranking.
+
+\subsubsection{Single Idea Evaluation}
+To evaluate a single idea, we need to use a method.
+The method we will use is \textbf{SWOT}, which stands for Strengths, Weaknesses, Opportunities, and Threats.
+The following four tables are the SWOT tables we have come up with.
+To see the rest of these SWOT tables, see appendix ???
+
+\begin{table}[]
+    \begin{tabular}{|l|l|}
+    \hline
+    Strengths & Weaknesses \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Widely available\\ Low location restriction\\ Familiar to the user\\ Can work on “the go”\\ Scalable\end{tabular} & \begin{tabular}[c]{@{}l@{}}Date connectivity\\ Battery powered\\ Small interfaces\\ Many platforms (OS and hardware)\\ Entry cost\end{tabular} \\ \hline
+    Opportunities & Threats \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Automations of tasks\\ Adaptable for other scenarios\\ Multiple simultaneous users\end{tabular} & \begin{tabular}[c]{@{}l@{}}Privacy/security\\ Third party rights\\ Theft of device, potential leaks\end{tabular} \\ \hline
+    \end{tabular}
+    \caption{SWOT table for Mobile Platform in external services.}
+    \label{tab:swot-mobile-platform-ecology}
+\end{table}
+
+\begin{table}[]
+    \begin{tabular}{|l|l|}
+    \hline
+    Strengths & Weaknesses \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Can utilize chat, calender, web, email and apps\\ All users have access to mobile devices\\ Widely available\end{tabular} & \begin{tabular}[c]{@{}l@{}}Can be distractify (Multi paradigm device, recreational and professional)\\ Many OS/hardware configurations\\ Can be expensive\end{tabular} \\ \hline
+    Opportunities & Threats \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Might have high computational power\\ Have many built-in sensors\end{tabular} & \begin{tabular}[c]{@{}l@{}}Maintainability for platforms\\ Might have insufficient computational power\end{tabular} \\ \hline
+    \end{tabular}
+    \caption{SWOT table for Mobile in external artifacts.}
+    \label{tab:swot-mobile-ecology}
+\end{table}
+
+\begin{table}[]
+    \begin{tabular}{|l|l|}
+    \hline
+    Strengths & Weaknesses \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Well documented API\\ Easy to work with\\ Common interface\\ No entry cost\\ Highlight progress\end{tabular} & \begin{tabular}[c]{@{}l@{}}Requires internet\\ Learning curve for the customer\end{tabular} \\ \hline
+    Opportunities & Threats \\ \hline
+    \begin{tabular}[c]{@{}l@{}}More transparency for the customer\\ Closer collaboration between the customer and developers\end{tabular} & Third party integration problems \\ \hline
+    \end{tabular}
+    \caption{SWOT table for Github in external repositories.}
+    \label{tab:swot-github-ecology}
+\end{table}
+
+\begin{table}[]
+    \begin{tabular}{|l|l|}
+    \hline
+    Strengths & Weaknesses \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Experts in “agile” processes\\ Understands the developers\end{tabular} & \begin{tabular}[c]{@{}l@{}}More focus on the process than the solution\\ Availability\end{tabular} \\ \hline
+    Opportunities & Threats \\ \hline
+    Force developers to think outside the box & Disrupts work-flows \\ \hline
+    \end{tabular}
+    \caption{SWOT table for Agile Coach in external people.}
+    \label{tab:swot-agile-coach-ecology}
+\end{table}
+
+
+\subsubsection{Comparative Idea Evaluation}
+Mentioned before, we will use this evaluation technique, to rank the different ideas.
+Here we will use the SWOT method, however, we will have some metrics for the four categories in SWOT.
+For strengths and opportunities, the value can be ranging from 0 and 5.
+For weaknesses and threats, the value can be ranging from minus 5 to 0.
+The \ref{tab:swot-ranking-external-services} is our ranking for external repositories, as we think that all of these ideas, try to solve the same problem, and are therefore alternatives to the solution.
+
+\begin{table}[]
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    Ecology Ideas & \multicolumn{2}{c|}{Strengths/Weaknesses} & \multicolumn{2}{c|}{Opportunities/Threats} & Overall \\ \hline
+    Mobile Platform & 5 & -1 & 3 & -1 & 6 \\ \hline
+    Email Platform & 4 & -2 & 0 & 0 & 2 \\ \hline
+    Web Platform & 5 & -1 & 2 & -1 & 5 \\ \hline
+    Board & 4 & -3 & 2 & -2 & 1 \\ \hline
+    Calendar & 3 & -1 & 0 & -1 & 1 \\ \hline
+    Chat & 4 & -3 & 2 & -1 & 2 \\ \hline
+    \end{tabular}
+    \caption{SWOT table with values for external services.}
+    \label{tab:swot-ranking-external-services}
+\end{table}
+
+The rest of the tables can be seen in appendix ???
+
+\subsection{Conclusion of Ecology}
+After we have ranked all of the points, we will use these Ecology Interfaces, in further development.
+These will be used when we create our configuration table, in later parts of the report.
+The ranking is as follow:
+
+\begin{itemize}
+    \item Mobile Platform (6)
+    \item Github (6)
+    \item Web Platform (5)
+    \item Mobile (4)
+    \item Database (4)
+\end{itemize}
