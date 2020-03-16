@@ -1,0 +1,121 @@
+\section{Leverage Point}
+This section will highlight the process in finding the Leverage in our project, meaning to produce a list of keystones, that will help us solve the challenge mentioned in~\autoref{par:motivation}
+
+Leverage Points follows a similar process as presented in~\autoref{sec:ecology-interface}, however, in Leverage we look at the internal points.
+These are categories are technologies, internal artifacts, internal repositories, and internal people.
+The \textbf{technology} is scientific knowledge and machinery, which our design might be based on, meaning that we can not use a, "out of the box" solution, but we need to make it ourselves.
+The \textbf{internal artifact} is like the one in Ecology, however, it is something that is used as part of the solution, and can be accessed via a crafted interface, and not a trivial interface.
+The \textbf{internal repositiory} is for collecting and storing information, that can be accessed via a crafted interface.
+The last category is \textbf{internal people}.
+These people will either have a particular role or function designed as part of making the solution.
+Just as Ecology, there can be several different people that this can be, such as:
+
+\begin{itemize}
+    \item Specific persons
+    \item Categories of users
+    \item Authorities
+    \item Social or Professional networks
+    \item Organizations
+\end{itemize}
+
+\subsection{Evaluation of points}
+We also need to evaluate the points that we have gathered to get an idea of which points we need to create the solution.
+The possible Leverage points are in technologies are:
+
+\begin{itemize}
+    \item Flutter
+    \item React Native
+    \item Xamarin
+    \item JavaScript framework/libraries
+    \item DotNET
+    \item Entity framework
+    \item Docker
+    \item PostgreSQL
+    \item MariaDB
+\end{itemize}
+
+For the internal repositories, the points are:
+
+\begin{itemize}
+    \item GitHub
+\end{itemize}
+
+We have not found any possible leverage points in the remaining categories.
+The next thing to do is to evaluate the possible points. 
+We will also utilize the two idea evaluation techniques mentioned in Essence, which we also used in~\autoref{sec:ecology-interface}.
+
+\subsubsection{Single Idea Evaluation}
+To make our single idea evaluation, will we use a method called PCRT, which stands for Power, Cost, Risk and Time.
+This method can only be used in Leverage, however, it should be noted that we could have used SWOT again, but we wanted to try another method, which is special to Leverage Points.
+The method highlight, what brings power to the point, meaning how much value do we get out of the given point.
+The cost is how much it costs to match the gains, and will it be worth it in the end.
+The risk is how much the point will increase the risk level, and lastly, the time, is how much it might affect the time to complete the solution.
+
+An example of this can be seen in~\autoref{tab:pcrt-Flutter}, which is our table for the technology, "Flutter".
+
+\begin{table}[h]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \multicolumn{3}{|c|}{Power} \\ \hline
+    \multicolumn{3}{|c|}{\begin{tabular}[c]{@{}l@{}}High - Cross-platform, Easy to design with, \\ Popular and rising, Hot-reload and speed on device\end{tabular}} \\ \hline
+    \multicolumn{1}{|c|}{Cost} & Risk & Time \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Low - Open source, \\ free resource\end{tabular} & \begin{tabular}[c]{@{}c@{}}Low - Open source,\\ but breaking changes might come\end{tabular} & \begin{tabular}[c]{@{}c@{}}Low - Familiar for web developers, \\ Easy to learn.\end{tabular} \\ \hline
+    \end{tabular}%
+    }
+    \caption{PCRT analysis of Flutter in technologies.}
+    \label{tab:pcrt-Flutter}
+\end{table}
+
+\subsubsection{Comparative Idea Evaluation}
+To compare ideas, we need to modify the PCRT method, to have some sort of value.
+This means that we need to have some positive metrics and negative ones.
+Power is the only positive and cost, risk and time are all negative ones.
+Power is ranging from 1 to 10, while the other three are ranging from minus 5 to minus 1.
+
+Table \ref{tab:pcrt-technologies-leverage} shows how we ranked the different technologies.
+
+\begin{table}[h]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{|l|l|l|l|l|l|l|l|c|l|}
+    \hline
+    \multirow{2}{*}{Flutter} & \multicolumn{6}{c|}{Power} & 9 & \multicolumn{2}{c|}{\multirow{2}{*}{5}} \\ \cline{2-8}
+     & Cost & -1 & \multicolumn{1}{r|}{Risk} & -2 & Time & -1 & -4 & \multicolumn{2}{c|}{} \\ \hline
+    \multirow{2}{*}{React Native} & \multicolumn{6}{c|}{Power} & 7 & \multicolumn{2}{c|}{\multirow{2}{*}{3}} \\ \cline{2-8}
+     & Cost & -1 & Risk & -1 & Time & -2 & -4 & \multicolumn{2}{c|}{} \\ \hline
+    \multirow{2}{*}{Xamarin} & \multicolumn{6}{c|}{Power} & 6 & \multicolumn{2}{c|}{\multirow{2}{*}{-1}} \\ \cline{2-8}
+     & Cost & -1 & Risk & -3 & Time & -3 & -7 & \multicolumn{2}{c|}{} \\ \hline
+    \multirow{2}{*}{JavaScript frameworks/library} & \multicolumn{6}{c|}{Power} & 9 & \multicolumn{2}{c|}{\multirow{2}{*}{3}} \\ \cline{2-8}
+     & Cost & -1 & Risk & -2 & Time & -3 & -6 & \multicolumn{2}{c|}{} \\ \hline
+    \multirow{2}{*}{DOTNET} & \multicolumn{6}{c|}{Power} & 9 & \multicolumn{2}{c|}{\multirow{2}{*}{5}} \\ \cline{2-8}
+     & Cost & -1 & Risk & -2 & Time & -1 & -4 & \multicolumn{2}{c|}{} \\ \hline
+    \multirow{2}{*}{Entity Framework} & \multicolumn{6}{c|}{Power} & 8 & \multicolumn{2}{c|}{\multirow{2}{*}{5}} \\ \cline{2-8}
+     & Cost & -1 & Risk & -1 & Time & -1 & -3 & \multicolumn{2}{c|}{} \\ \hline
+    \multirow{2}{*}{Docker} & \multicolumn{6}{c|}{Power} & 10 & \multicolumn{2}{c|}{\multirow{2}{*}{6}} \\ \cline{2-8}
+     & Cost & -1 & Risk & -2 & Time & -1 & -4 & \multicolumn{2}{c|}{} \\ \hline
+    \multirow{2}{*}{PostgreSQL} & \multicolumn{6}{c|}{Power} & 8 & \multicolumn{2}{c|}{\multirow{2}{*}{5}} \\ \cline{2-8}
+     & Cost & -1 & Risk & -1 & Time & -1 & -3 & \multicolumn{2}{c|}{} \\ \hline
+    \multirow{2}{*}{MariaDB} & \multicolumn{6}{c|}{Power} & 5 & \multicolumn{2}{c|}{\multirow{2}{*}{1}} \\ \cline{2-8}
+     & Cost & -1 & Risk & -1 & Time & -2 & -4 & \multicolumn{2}{c|}{} \\ \hline
+    \end{tabular}
+    }
+    \caption{PCRT analysis with values.}
+    \label{tab:pcrt-technologies-leverage}
+\end{table}
+
+The table for the repositories can be seen in~\autoref{app:pcrt-leverage}
+
+\subsection{Conclusion of Leverage}
+After all of these rankings, we have found which leverage points we will focus on.
+These will serve as major keystones that our solution will be based upon.
+The leverage points we have are: 
+
+\begin{itemize}
+    \item Docker (6)
+    \item Flutter (5)
+    \item DOTNET (5)
+    \item Entity Framework (5)
+    \item PostgreSQL (5)
+\end{itemize}
