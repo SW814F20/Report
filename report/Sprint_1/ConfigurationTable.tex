@@ -1,27 +1,69 @@
-\section{Configuration Table}
+\section{Configuration Table}\label{sec:first-configuration-table}
 This section will describe what a configuration table is, and how our configuration table looks for the first sprint.
 
 So what is a configuration table, you might ask?
 A configuration table, is a table, with information about the project status. 
-The table, will help you get a better overview of the solution you are trying to create, and why the problem needs to be solved.
-Furethermore you can at all times see what the given sprint focus is, and when you need to review the solution, and other things, then you can just look at the configuration table, as one of the columns will be the criteria for the solution.
+The table will help you get a better overview of the solution you are trying to create, and why the problem needs to be solved.
+Furthermore, you can at all times see what the given sprint focus is, and when you need to review the solution and other things, then you can just look at the configuration table, as one of the columns will be the criteria for the solution.
 
-~\autoref{fig:example-configuration-table} shows the stucture of a configuration table.
 
-\begin{figure}[]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{images/configurationTableExample.png}
     \caption{Structure of a Configuration table.}
     \label{fig:example-configuration-table}
 \end{figure}
 
-A configuration table consists of three areas, which is, \textbf{Rationale}, \textbf{Tactics} and \textbf{Strategy}.
-Each of these have their own area of view in the given project, however, there are some elements which they share with oneanother.
+~\autoref{fig:example-configuration-table} shows the stucture of a configuration table.
+Here we have three areas, \textbf{Rationale}, \textbf{Tactics} and \textbf{Strategy}.
+Each of these has its own area of view in the given project, however, there are some categories which they share with one another.
+Furthermore, the configuration table is organized into four "views", which are:
 
-\subsection{Rationale}
-\subsection{Tactics}
-\subsection{Strategy}
+\begin{itemize}
+    \item Paradigm - Used as the understanding of the problem
+    \item Product - Used to describe how the constructive parts of the solution could be designed
+    \item Project - Used to reason about the purpose and our overall idea in the project.
+    \item Process - Used to determine if we are on the right track or not, in solving the problem. 
+\end{itemize}
 
+Furthermore they all involves the \textbf{Paradigm}, which is the reflection column, the \textbf{Product}, which is 
+
+The rationale layer is known as the "why" layer.
+Why are we trying to solve the problem we have, and which leverage points do we use in order to solve the problem.
+Under paradigm, we have \textbf{Challenge} and \textbf{Problem}, also known in the first iteration, as the initial problem.
+In the product column, we have \textbf{Leverage}, which is the leverage points we will use in this iteration, to solve the problem we have.
+Next, we have the resolution, which is the prospect, warrant, and backing. 
+Here we look at the \textbf{Prospect}, which is the solution, we believe will solve the problem.
+The \textbf{Warrant} is a statement about why it is important to solve the problem at hand, and the \textbf{Backing} is why we think that the prospect is a useful solution to the problem.
+The last cell is the rationale review, where we will look at the \textbf{Criteria for our resolution}, which involves our Prospect, warrant, and backing.
+This cell is meant to be a checklist, which can be reviewed, for example at the end of a sprint.
+The rationale layer also involves the architecture, which we will describe in the strategy layer paragraph.
+
+The strategy is the "what" layer.
+This layer concerns the organization of our actions and how we will model our platform.
+First, we have \textbf{Elements}, which are core objects or events in our problem domain.
+The \textbf{Architecture} is the conceptual structure and logical organization, of our software system.
+Next we have \textbf{Qualifier} and \textbf{Rebuttal}.
+The qualifier states the limitations of our solution.
+These can be, that we do not solve the problem for all, but only for some.
+The rebuttal is then a statement about why this is okay or good enough.
+The last thing in this layer is the \textbf{Strategy review}.
+Here we will look at the \textbf{Criteria for Architecture}.
+Just as in the Rationale review cell, we have a checklist, of questions we can review, about the architecture.
+One of these could be if the architecture is feasible or not.
+The strategy layer also involves leverage and features.
+
+The Tactics layer is the "how" layer.
+How do we benefit from our solution, and which features do we need in order to get the value out of it.
+The first cell is the \textbf{Scenarios}, which is statements about which scenarios, this prospect should focus on.
+Next, we have the \textbf{Features}, which are attributes in our software, which will provide value propositions.
+Then we have \textbf{Value Propostions}, which is a (partial) solution to our problem.
+Lastly, we need to have some sort of review in this layer.
+Here we will look at the \textbf{Criteria for Value Propostions}.
+Do we get enough value out of our solution, or not.
+The Tactics layer also concerns about the elements and architecture.
+
+All of this leads us to our first configuration table, which can be seen in~\autoref{tab:first-configuration-table}
 
 \begin{landscape}
     \begin{table}[]
@@ -106,7 +148,7 @@ Each of these have their own area of view in the given project, however, there a
           \end{minipage} 
          \\ \\ Findings:\end{tabular} \\ \hline
     \end{tabular}
-    \caption{}
-    \label{tab:my-table}
+    \caption{First configuration table, named Anne.}
+    \label{tab:first-configuration-table}
     \end{table}
 \end{landscape}
