@@ -1,0 +1,169 @@
+\section{Review of Sprint}\label{sec:review-sprint-anne}
+This section will conclude the first sprint, and highlight how successful this sprint has been.
+Furthermore, in Essence, we need to review our configuration, which can be seen in~\autoref{sec:first-configuration-table}, as we need to use the updated configuration table as input for the next sprint.
+
+The goals for this sprint is:
+
+\begin{itemize}
+    \item Create the first configuration table 
+    \item Create login system in the application
+    \item Create screen overview and functionalities
+    \item Create an overview board.
+    \item Implement the needed functionalities in the database.
+\end{itemize}.
+
+In~\autoref{sec:first-configuration-table} we created the first configuration table, and therefore we have completed the first goal, namely, the \textit{Create the first configuration table}.
+
+Section ??? highlights the process in creating the application, and how we have implemented the needed functionalities, such as the \textit{Login system, Screen overview, and the Overview Board}.
+
+The last thing is to implement the needed functionalities in the database, which can be seen in section ???.
+Here we went over what features we needed to implement, and how we did it, and in the end, we completed the last goal, namely the \textit{Implement the needed functionalities in the database}.
+
+From all of these sections, we have completed all of the goals that we have for this sprint, and therefore this sprint has been a success.
+
+The last thing to do is, to review the configuration table.
+We have made several changes to the configuration as we have gathered more information about how we should create one, but also as we have learned more about the domain.
+We have made changes to the following cells:
+
+\begin{itemize}
+    \item Leverage
+    \begin{itemize}
+        \item Removed JavaScript Frameworks, because we are using Flutter to create the mobile application.
+    \end{itemize}
+    \item Qualification
+    \begin{itemize}
+        \item Changed both the Qualifier and Rebuttal, to reflect the new point of view
+    \end{itemize}
+    \item Criteria for Architecture Expectations
+    \begin{itemize}
+        \item Added more expectations to the architecture, as we wanted to have a more modularized architecture in the code.
+    \end{itemize}
+    \item Scenarios \& Features
+    \begin{itemize}
+        \item Added more scenarios and more features, because of new information about the features that should be in this solution.
+    \end{itemize}
+    \item Value Propositions
+    \begin{itemize}
+        \item Added more points to Value Propositions to reflect the changes made in Scenarios and Features
+    \end{itemize}
+    \item Criteria for Value Propositions
+    \begin{itemize}
+        \item Added more criteria to reflect the new value propositions 
+    \end{itemize}
+\end{itemize}
+
+The revised configuration table can be seen in~\autoref{tab:bente-configuration-table}.
+
+\begin{landscape}
+    \begin{table}[]
+        \tiny
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    View & \multicolumn{1}{c|} {Paradigm} & \multicolumn{1}{c|} {Product} & \multicolumn{1}{c|}{Project} & Process \\ \hline
+    Value & \multicolumn{1}{c|}{Reflection} & \multicolumn{1}{c|}{Transaction} & \multicolumn{1}{c|}{Reasoning} & Appreciation \\ \hline
+    Rationale & \begin{tabular}[c]{@{}l@{}}Problematic:\\ \\ Challenge: Improve the communication \\ between customers and developers in \\ an Agile Software Development Process.\\ \\ Problem: The communication between \\ customers and developers are one of the \\ most challenging aspects of the \\ development process.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Leverage:\\
+        \begin{minipage} [t] {0.325\textwidth} 
+            \begin{itemize}
+            \item Docker
+            \item Flutter
+            \item DotNet
+            \item Entity Framework
+            \item PostgreSQL
+           \end{itemize} 
+          \end{minipage} 
+    \end{tabular} & \begin{tabular}[c]{@{}l@{}}Resolution:\\ \\ Prospect: The communication \\ between developers and \\ product owners will become easy.\\ \\ Warrant: Because software \\ development is expensive, \\ and could reduce the \\ cost and increase the quality\\ \\ Backing: Inexpensive, \\ popular platform. Extensible\end{tabular} 
+            & \begin{tabular}[c]{@{}l@{}}Criteria for resolution expectations:\\ 
+                \begin{minipage} [t] {0.3\textwidth} 
+                    \begin{itemize}
+                    \item Is the problem still worth solving
+                    \item Does the proposed solution solve the problem
+                    \item Have we used the correct leverage points
+                   \end{itemize} 
+                  \end{minipage}    
+                \\ \\ Findings:\\
+                \begin{minipage} [t] {0.3\textwidth} 
+                    \begin{itemize}
+                    \item \textit{Possible need an adapter between formalized requirements and SUT}
+                   \end{itemize} 
+                  \end{minipage}   
+            \end{tabular} \\ \hline
+    Strategy  & \begin{tabular}[c]{@{}l@{}}Elements \& Ecology:\\ 
+        \begin{minipage} [t] {0.325\textwidth} 
+            \begin{itemize}
+            \item The product owners problem domain will be visible
+            \item The product owner will have more direct communication with the developers
+            \item Making the development process transparent
+           \end{itemize} 
+          \end{minipage} 
+    \end{tabular} & \begin{tabular}[c]{@{}l@{}}Architecture:\\ 
+        \begin{minipage} [t] {0.325\textwidth} 
+            \begin{itemize}
+            \item Digital app editor module
+            \item Digital issue tracking module
+            \item Digital communication module
+           \end{itemize} 
+          \end{minipage}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Qualification:\\ \\ Qualifier: Requires understanding of the\\ formalized methodology of requirements \\ \\ Rebuttal: The app provides an \\intuitive structured interface for\\ using the methodology,\\ so learning should be easy.\end{tabular} 
+            & \begin{tabular}[c]{@{}l@{}}Criteria for architecture expectations: \\
+            \begin{minipage} [t] {0.3\textwidth} 
+                \begin{itemize}
+                \item Is the architecture feasible
+                \item Is the product user-friendly
+                \item Is the architecture modularized in order to support future expansions?
+               \end{itemize} 
+              \end{minipage} \\
+            \\ Findings:\\
+            \begin{minipage} [t] {0.3\textwidth} 
+                \begin{itemize}
+                \item \textit{Encapsulate app behaviour in flutter widgets for ease of use and ease of customization}
+               \end{itemize} 
+              \end{minipage}   
+\end{tabular} \\ \hline
+    Tactics   & \begin{tabular}[c]{@{}l@{}}Scenarios:\\ 
+        \begin{minipage} [t] {0.325\textwidth} 
+            \begin{itemize}
+            \item Product owner used the system to create a interaction requirement.
+            \item Product owner used the system to create expected behaviors of interactions.
+            \item Developers can take tasks and solve them
+            \item The Product owner can at any time see how a task is going and see the progress
+           \end{itemize} 
+          \end{minipage} 
+         \end{tabular} & \begin{tabular}[c]{@{}l@{}}Features:\\ 
+            \begin{minipage} [t] {0.325\textwidth} 
+                \begin{itemize}
+                \item App editor where the Product owner can make their interaction requirements thereby creating an interaction model.
+                \item App editor where product owner can formalize expected behavior requirements for an interaction model.
+                \item The app editor can suggest behavior requirements for specific interaction elements.
+                \item Translate App editor to developer requirements
+               \end{itemize} 
+              \end{minipage} 
+    \end{tabular} & \begin{tabular}[c]{@{}l@{}}Value Propositions:\\
+        \begin{minipage} [t] {0.3\textwidth} 
+            \begin{itemize}
+            \item Translate customer requirements to product requirements.
+            \item Help customer to specify edge-case behaviours they may not realize naturally.
+            \item Leviate overhead for the customer in how to explain requirements.
+            \item Supply an unified framework for the developers for understanding requirements.
+            \item Creates a contract between customer and developers.
+           \end{itemize} 
+          \end{minipage} 
+         \end{tabular} & 
+    \begin{tabular}[c]{@{}l@{}}Criteria for value Propositions \\ expectations: \\
+        \begin{minipage} [t] {0.3\textwidth} 
+            \begin{itemize}
+            \item Is the translation effective
+            \item Does the app gives edge-cases behaviours to the customer 
+            \item Does the app makes it easier to explain requirements
+           \end{itemize} 
+          \end{minipage} 
+         \\ \\ Findings: \\
+         \begin{minipage} [t] {0.3\textwidth} 
+            \begin{itemize}
+            \item \textit{Help the customer and developers to get started.}
+           \end{itemize} 
+          \end{minipage}  
+        \end{tabular} \\ \hline
+    \end{tabular}
+    \caption{Configuration table, named Bente.}
+    \label{tab:bente-configuration-table}
+    \end{table}
+\end{landscape}
