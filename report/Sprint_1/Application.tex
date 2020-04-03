@@ -49,11 +49,16 @@ This was done because Kanban boards are a common way to organize tasks.
 \end{figure}
 
 \subsection{Implementation}
+Most of this sprint was used on setting up the project and some code was written to allow for easier future development.
+This includes a base screen that all other screens should extend, which adds nice-to-have functionality such as detecting if the device is a tablet or phone, and if it is in portrait or landscape mode.
+
 The screens shown in~\autoref{sprint_1_design} have been implemented, and screenshots of the implementations can be seen in~\autoref{login_screen_design_app},~\autoref{app_selection_screen_app},~\autoref{app_creation_screen_app}, ~\autoref{create_task_screen_app} and~\autoref{task_dashboard_screen_app}.
 
-The screens implemented have the needed functionality, but no tasks are shown in the Task screen~\autoref{task_dashboard_screen_app}, because this functionality was not yet implemented in the API.
-But the application is ready for when this is implemented in Sprint 2. 
+The screens implemented have the needed functionality, but no tasks are shown in the Task screen~(~\autoref{task_dashboard_screen_app}), because this functionality was not yet implemented in the API.
+But the application is ready for when this is implemented in Sprint 2.
 
+The application code currently features all functionality available in the API as of Sprint 1.
+However it is not all code that is used, but this makes it easy to implement new functionality without the need for implementing more API specific code. 
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{Sprint_1/images/login_screen_app.png}
