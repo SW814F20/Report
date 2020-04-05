@@ -5,8 +5,8 @@ By reliability, we refer to properties such as correctness and robustness, or in
 The method is inspired by how a "human" contract, i.e. a business contract, works.
 In the paper "Applying 'Design by Contract'" by Bertrand Meyer 1992, Meyer identifies two major properties of human contracts [cite paper]:
 \begin{itemize}
-	\item Each party expects some benefits from the contract and is prepared to incur some obligations to obtain them.
-	\item These benefits and obligations are documented in a contract document.
+    \item Each party expects some benefits from the contract and is prepared to incur some obligations to obtain them.
+    \item These benefits and obligations are documented in a contract document.
 \end{itemize}
 
 Meyer also identifies two benefits of having a contract document, which is [cite paper]:
@@ -16,22 +16,29 @@ Meyer also identifies two benefits of having a contract document, which is [cite
 \end{itemize}
 
 Another finding Meyer highlights is, "what is an obligation for one party is usually a benefit for the other" [cite paper].
-To explain how Design by Contract can help us with communication we will look at the theory from two perspectives, the benefits from the customer and developer relation perspective and the benefits from the product perspective.
 
-[MANGLER TEKNISK BESKRIVELSE AF DbC ENTEN HER ELLER SOM ET SUBSECTION]
+A contract can be considered in terms of three elements; the precondition which is what needs to exist before the task of the contract can be fulfilled (such as a package for the postman to deliver.), the task for which the contract is concerned about (i.e. deliver the package on behave of the customer), and finally the postcondition which is what is expected to be true after the completion of the task (i.e. the package is delivered to the correct person, the package was delivered on time, etc.).
 
-\subsection{Customer and Developer Relation}
-As mentioned in [ref motivation] it is problematic for developers to get requirements and information from the customers.
-The way Design by Contract can help here is that if we imagine that every unit, by unit we mean an executable piece of code that is part of the system under development, had a contract document that specified the expected behavior of the unit.
-That way the developer knows that if they just make the unit uphold the contract then they have delivered what the customer expects.
-This also means that we need the customer to specify these expectations in terms of a contract, and since we know from [ref motivation] that the custoemr collaboration is trublesome we need a mechanism for this that will allow the customer to do this, with in their constraints. 
-We will later on, in [ref that section], explorer mechanismens that can allow for this. 
-But for now lets imagine that such a mechanism does exists and lets imagine it eliminates the customer collaboration problem.
+Considering a contract in these three phases can help translate the concept of a human contract into a concept of a contract within a software system. In the paper by Meyers, he considers a sub-routine where all the preconditions are asserted at the beginning of the sub-routine if one or more is not successfully asserted the sub-routine will throw an error and terminate. If all the preconditions are asserted successfully the sub-routine will do its computation and in the end, it will assert the postconditions. If any of the postconditions are not successfully asserted it will again throw an error and terminate.
 
-Sop with such a contract for every unit, the developer no longer need more information from the customer since they know that if they uphold the contract then the customer is happy. 
-And if the customer is not happy, the problem is not with the developer but with the specified contract.
-This means that we can move the discussion away from who is wrong and into how do we specify a new contract that ensures the correct behavior.
-This also implies that it would properly be a good idea if the customer are not the sole authority on the contracts, they should properbly be revised by a developer before being marked as ready for development.
+This translation of the contract concept is very similar to the Hoare triple known from Hoare Logic, where the Hoare triple takes the form
 
-\subsection{The Product Perspective}
+\begin{equation}
+{P} Q {R}
+\end{equation}
 
+Where $P$ denotes what is known to be true before the operation, $Q$ denotes the operation, and $R$ denotes what needs to be true after the operation. Thereby $P$ are the precondition, $Q$ is the operation or sub-routine, and $R$ is the postcondition. 
+
+This similarity between Hoare triple and Design by Contract is an advantage for our system. Since many testing methodologies and systems are built around the notion of Hoare Logic. 
+An example of this is the "triple-a"-method from Unit testing, which stand for \textbf{A}rrange, \text{A}ct, and \text{A}ssert.
+The idea is that if you construct your tests in a manner where you first arrange everything, i.e. preparing the unit for what you are about to test, then you perform the computation and lastly you assert that the operation behaved as expected. 
+This "triple-a"-method is also very similar to the "Given, When, Then"-method known from Behaviour driven development, where the tests are composed and arranged by Given a context, When a specific operation is run, Then we expect this. 
+
+We can there utilize Design by Contract in our software system, as a method for the customer (or product owner) to express the desired functionalities of the system and compile those into executable tests to run on the implementation. 
+This will allow the developers to constantly check whether their implementation is correct and sufficient in regard to the needs of the customer. 
+It will also allow for easier maintenance in the future, due to the possibility to assert whether new implementations or new services support the needs of the customer.
+
+But this also raises another problem, how are we gonna allow the customer to formulate the contracts? 
+Clearly, they are not experts in software development so to expect them to write out the test cases and think about all the units of the SUT would be too much to ask.
+
+Therefore there is a need for a methodology for expressing these contracts such that a customer would be able to formulate them and would be able to do it in a feasible time frame.
