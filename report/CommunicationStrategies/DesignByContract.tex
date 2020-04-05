@@ -24,17 +24,17 @@ Considering a contract in these three phases can help translate the concept of a
 This translation of the contract concept is very similar to the Hoare triple known from Hoare Logic, where the Hoare triple takes the form
 
 \begin{equation}
-{P} Q {R}
+\{P\} Q \{R\}
 \end{equation}
 
 Where $P$ denotes what is known to be true before the operation, $Q$ denotes the operation, and $R$ denotes what needs to be true after the operation. Thereby $P$ are the precondition, $Q$ is the operation or sub-routine, and $R$ is the postcondition. 
 
 This similarity between Hoare triple and Design by Contract is an advantage for our system. Since many testing methodologies and systems are built around the notion of Hoare Logic. 
-An example of this is the "triple-a"-method from Unit testing, which stand for \textbf{A}rrange, \text{A}ct, and \text{A}ssert.
+An example of this is the "triple-a"-method from Unit testing, which stand for \textbf{A}rrange, \textbf{A}ct, and \textbf{A}ssert.
 The idea is that if you construct your tests in a manner where you first arrange everything, i.e. preparing the unit for what you are about to test, then you perform the computation and lastly you assert that the operation behaved as expected. 
-This "triple-a"-method is also very similar to the "Given, When, Then"-method known from Behaviour driven development, where the tests are composed and arranged by Given a context, When a specific operation is run, Then we expect this. 
+This "triple-a"-method is also very similar to the "Given, When, Then"-method known from Behaviour driven development, where the tests are composed and arranged by Given a context, When a specific operation is run, Then we expect a specific change. 
 
-We can there utilize Design by Contract in our software system, as a method for the customer (or product owner) to express the desired functionalities of the system and compile those into executable tests to run on the implementation. 
+We can utilize Design by Contract in our software system, as a method for the customer (or product owner) to express the desired functionalities of the system and compile those into executable tests to run on the implementation. 
 This will allow the developers to constantly check whether their implementation is correct and sufficient in regard to the needs of the customer. 
 It will also allow for easier maintenance in the future, due to the possibility to assert whether new implementations or new services support the needs of the customer.
 

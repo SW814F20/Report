@@ -1,0 +1,23 @@
+\section{Requirements model}
+
+As a methodology for the customers ability to create contract that the system under development (SUD) should uphold we will look at a model for specifying requirements.
+More specificly we will consider the requirements model as presented in the book "Object-Oriented Software Engineering - A Use Case Driven Approach" by Ivar Jacobson [ref to book].
+
+We will not focus on the the other models from Jacobsons recommended development process, but the requirements model is perticular usefull for our solution and therefore we will focus on how he uses the notion of usecases and actors and how that can be adobted into our solution.
+
+Jacobson specifies two entities in formulating requirements, \textbf{Actors} and \textbf{Usecases}.
+An \textbf{actor} represents a role that a user have in relation to the system, a user might take different roles when interacting with the system, thereby an \textbf{Actor} is not linked directly with a user but is more a category of users.
+A \textbf{usecase} represent something that the users should be able to do with in the system. Each \textbf{usecase} takes the perspective of the user and is formulated as a complete list of events in the interaction with the system when utilizing the functionality regarded in the usecase.
+
+\subsection{Actors}
+In more general terms a actor is something that can interact with the system. That could be a person, a machine or another software running on the same machine. 
+A key destingtion to make is that a, ex. person, is not limited to be only one type of actor.
+Actors should more be regarded as roles in the system, so if Britta works at a store as a clerk, she will have the actor type clerk when she is working, but in her freetime she might shop in the same store and thereby take the actor role as customer. 
+
+In a broader sense we can consider actors to be everything communicating with the system from outside the system it self.
+
+In our solution we can use the notion of actors to identify roles with in the SUD, this will allow the developers and customers to communicate easier since they will have a unified vocabulary when talking about who communicates with the system. 
+It will also help if the SUD needs boundaries with in the system, i.e. functionalities only avaible to some actors, the customers will then be able to specify a list of actors who should have access to said functionalities, which will help the developers in ensuring correctness.
+The developers might even create a access layer with in the SUD based of the actors identified in the requirements or groupings of actors.
+
+\subsection{Usecases}
