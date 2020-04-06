@@ -5,10 +5,10 @@ touch main.pdf
 rm main.pdf
 
 ### Compiles for days ###
-pdflatex main.tex
-pdflatex main.tex
+pdflatex -interaction=errorstopmode main.tex
+pdflatex -interaction=errorstopmode main.tex
 biber main
-pdflatex main.tex
+pdflatex -interaction=errorstopmode main.tex
 
 ### Cleans up the terminal ###
 clear
