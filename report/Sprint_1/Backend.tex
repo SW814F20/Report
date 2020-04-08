@@ -1,0 +1,125 @@
+\section{Backend}
+
+Throughout this section we will describe the development done on the backend during sprint one.
+Throughout the sprint focus where to make an minimal viable product (MVP) since it would provide much value to the project and be relatively easy to implement.
+
+\subsection{Application Programming Interface}
+
+The main focus of this sprint was on the Application Programming Interface (API) where the following features where implemented:
+\begin{itemize}
+    \item User registration
+    \item User login
+    \item User deletion
+    \item User update
+    \item User information retrieval
+    \item User authorization
+    \item Task creation
+    \item Task deletion
+    \item Task update
+    \item Task information retrieval
+    \item Screen creation
+    \item Screen deletion
+    \item Screen update
+    \item Screen information retrieval
+    \item App creation
+    \item App deletion
+    \item App update
+    \item App information retrieval
+\end{itemize}
+
+The different components of the API where implemented with their own endpoints making the calls to the API as user friendly as possible.
+
+From the list above four endpoints where created;
+\begin{itemize}
+    \item User
+    \item Task
+    \item Screen
+    \item App
+\end{itemize}
+
+For the implementation of the API the leverage points given in~\autoref{subsec:ConclusionOfLeverage} showed which technologies to utilize.
+For the API the only one of the technologies that would make sense to use is Dotnet.
+
+Dotnet is a framework developed by Microsoft using their C\# language.
+Dotnet is easy to use, in terms of development setup and production hosting and is thus a powerful tool\cite{DotnetWebsite}.
+
+The development of the API was conducted simultaneously with the development of the application it self.
+The endpoint was created as they where needed within the application.
+Allowing for the developers to work simultaneously on their issues and providing a working application along the they.
+
+The design of the API is based on the Model, View, Controller (MVC) pattern\cite{MVC}.
+However since the API does not provide any meaningful interface to view, that element is meaningless and is thus not implemented.
+
+The models are all the different objects the API has to deal with, such as users, apps, tasks and screens.
+Each model has it own class in the C\# language as can be seen in~\autoref{APIAppModel}.
+
+\begin{lstlisting}[caption={API App model}, label={APIAppModel}, language={CSharp}]
+namespace API.Models.App
+{
+    public class AppModel
+    {
+        public int Id { get; set; }
+        public string AppName { get; set; }
+        public string AppUrl { get; set; }
+        public string AppColor { get; set; }
+    }
+}
+\end{lstlisting}
+
+Each endpoint has its own controller which is used to interface with the business logic of the API.
+An example of this can be seen in~\autoref{APIAppController}.
+This snippet shows an endpoint where if the API is called on App this an HttpGet request, this function will be called and the answer returned.
+The function it self i rather simple, it calls the GetAll function and maps the result to a meaningful result that is then returned.
+
+\begin{lstlisting}[caption={API App Controller GetAll Function}, label={APIAppController}, language={CSharp}]
+/// <summary>
+/// Get All Apps in the system
+/// </summary>
+/// <returns>HttpCode 200 with a list of apps</returns>
+[HttpGet]
+public IActionResult GetAll()
+{
+    var app = _appService.GetAll();
+    var model = _mapper.Map<IList<AppModel>>(app);
+    return Ok(model);
+}
+\end{lstlisting}
+
+The actual function dealing with the logic of such a call can be seen on~\autoref{APIAppService}.
+Since this function is rather simple overall the only actual logic is accomplished by returning all apps in the datacontext, which is just a call to the database.
+
+\begin{lstlisting}[caption={API App Controller GetAll Function}, label={APIAppService}, language={CSharp}]
+/// <summary>
+/// Get All Apps
+/// </summary>
+/// <returns>List of all apps</returns>
+public IEnumerable<App> GetAll()
+{
+    return _context.Apps;
+}
+\end{lstlisting}
+
+Similar model, services and controllers can be found for each element of the list above.
+
+\subsection{Database}
+
+In~\autoref{subsec:ConclusionOfLeverage} it was concluded that PostgreSQL should be used as the datastore for this project.
+Based on previous experience the database was setup using Docker which allows the developers to run the database locally and have the exact same environment as the production servers would run.
+
+On DockerHub there are an official repository from PostgreSQL which provides the docker image to run\cite{DockerHubPostgreSQL}.
+
+With the use of entity framework in the API, the state of the database is easily maintained as migrations for the API can be added and removed as needed, meaning that the state of the database would always be functional for the API\cite{EntityFramework}.
+
+\subsection{API Documentation}
+
+Since different developes are responsible for developing different part of the solution, the documentation is a key point that enables one developer to work on the work made by others.
+Since the API is developed using the dotnet framework we can use a tool called Swagger to auto generate an interactive interface containing the API documentation\cite{SwaggerIO}.
+
+On~\autoref{SwaggerDocumentation} a screenshot of the documentation can been seen.
+With this interface the different developers where able to use the API at any given moment since the documentation would always be of the most resent version.
+
+\figur{1}{images/SwaggerDocumentation}{Screenshot of Swagger Documentation of the API}{SwaggerDocumentation}
+
+While most of the documentation would be auto-generated some needs to be written by the developer.
+In~\autoref{APIAppController} the first four lines the swagger documentation is written in XML format.
+Since the documentation written within the code would be visible outside, the developers where more aware of the need for documentation and would thus write both more and better documentation then they otherwise would.
