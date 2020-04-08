@@ -1,41 +1,20 @@
 \section{Backend}
 
 Throughout this section we will describe the development done on the backend during sprint one.
-Throughout the sprint focus where to make an minimal viable product (MVP) since it would provide much value to the project and be relatively easy to implement.
 
 \subsection{Application Programming Interface}
 
-One of the goals of this sprint was to create the Application Programming Interface (API) where the following features where implemented:
-\begin{itemize}
-    \item User registration
-    \item User login
-    \item User deletion
-    \item User update
-    \item User information retrieval
-    \item User authorization
-    \item Task creation
-    \item Task deletion
-    \item Task update
-    \item Task information retrieval
-    \item Screen creation
-    \item Screen deletion
-    \item Screen update
-    \item Screen information retrieval
-    \item App creation
-    \item App deletion
-    \item App update
-    \item App information retrieval
-\end{itemize}
+One of the goals of this sprint was to create the Application Programming Interface (API) where the following endpoints where implemented:
 
-The different components of the API were implemented with their own endpoints making the calls to the API as user friendly as possible.
-
-From the list above four endpoints where created;
 \begin{itemize}
     \item User
     \item Task
     \item Screen
     \item App
 \end{itemize}
+
+Each endpoint supports as a minimum; Create, Read, Update, Delete (CRUD \cite{CRUD}).
+Futhermore some endpoint contains specialized Reads were complete lists of, fx Screens and Tasks, can be returned from one call rather then multiple. 
 
 For the implementation of the API, the prioritized leverage points in~\autoref{subsec:ConclusionOfLeverage} shows which technologies to utilize.
 For the API the only one of the technologies that would make sense to use is Dotnet.
@@ -121,5 +100,5 @@ With this interface, the different developers can use the API at any given momen
 \figur{1}{images/SwaggerDocumentation}{Screenshot of Swagger Documentation of the API}{SwaggerDocumentation}
 
 While most of the documentation would be auto-generated some of it needs to be written by the developer.
-In~\autoref{APIAppController} the first four lines the swagger documentation is written in XML format.
+In~\autoref{APIAppController} the first four lines shows the swagger documentation which is in XML format.
 Since the documentation is written within the code, the developers should be more aware of the need for documentation and would thus write both more and better documentation then they otherwise would.
