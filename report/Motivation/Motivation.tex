@@ -25,11 +25,20 @@ We will now reason about the principles and try to suggest what implications the
 
 \textbf{Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.}
 This principle indicates that the developers should deliver vertical slices of the software to the customer as soon as possible and continuously.
-We assume that this will allow the developers to validate the software early and learn whether the software is correct in terms of actual usage instead of in terms of specified requirements.
+A vertical slice of software refers to a functionality that is implemented across all the layers of the software - let us say a software consist of three layers: Data Management layer, Business logic layer, and User Interface layer. 
+Then a vertical slice of the authentication component could be the login part. 
+This require a user interface for performing the login activity, the business logic for actually authenticating a user, and the data management for storing the users' credentials. 
+It would not necessarily require a logout functionality.
+
+The reason we suspect this principle is about developers to deliver vertical slices is due to the wording of "valuable software". 
+We find it reasonable to assume that in order for the software to be valuable it should be functional across all layers in regards to the implemented functionality. 
+Let us, for example, take the login example again, if it is only implemented in two of the three layers it will not hold any value for the customer.
+
+We assume that this principle will allow the developers to validate the software early and learn whether the software is correct in terms of actual usage instead of in terms of specified requirements.
 If our assumption is correct, this would mean that the customer would have to use unfinished or unstable software.
 Using unfinished software could mean a massive time investment for the customer, since they might have to do everything twice, once in their current system on which their operation still depends upon and once in the new system in order to give feedback to the developers.
 Using unstable software could not only mean a time investment but also increase the frustration towards the new software.
-This time investment and frustration could come from the fact that software might behave unexpectable, such as crashing when the customer tries to persist data. The customer then might try to save data multiple times and get frustrating with the software and the process as a whole.
+This time investment and frustration could come from the fact that software might behave unexpectable, such as not allowing them to logout.
 
 \textbf{Business people and developers must work together daily throughout the project.}
 This principle has an obvious implication on the customer.
@@ -40,7 +49,7 @@ Given the customer has daily responsibilities regarding their own business, one 
 Given the two previous principles, this brings along a rather big implication.
 Because not only does the customer need to invest a significant time into helping the developers, they also need to do it face-to-face, in other terms, they need to be in the same location as the developers.
 This means that when the customer needs to reason about requirements and features they need to do it away from the context and domain of said requirements and features.
-One can imagine how difficult it must be to reason about requirements and features for a system when alienated from the context and domain of the said system.
+One can imagine how difficult it must be to reason about requirements and features for a system when alienated from the context and domain of the said system. 
 
 \section{Reality of Customer Collaboration}
 We have looked at what the values of the Manifesto of Agile Software Development are and speculated in how that can make it difficult for customers to participate in such an environment.
