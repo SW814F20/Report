@@ -1,0 +1,33 @@
+\section{Combining the parts}
+Now that we have looked at a couple of methods that has been insparational for us, we will introduce how we believe requirements can be communicated and structured, such that they can automaticly be translated into executable tests and allow the customer to formulate them with ease and with out misunderstandings.
+
+The first part is Design by Contract, we believe that when specifying requirements for a system, they should be formulated as a contract, i.e. precondition, computation, postcondition. 
+Since this forces the customer to think in a bigger context than if we only focus on the computation.
+Also it gives a lot of extra valuable information to the developers, and it allows for converting the requirement into a executable test, see~\autoref{sec:DbC} for the relation between contracts and Hoare Logic.
+
+The second part is how we imagine the customer to create these contracts. 
+But first we need to specify a bit of context.
+Our focus in this project is from the perspective of the customer, the people paying for the system under development.
+We have also choosen to focus on requirements for mobile application development, more specific we have choosen to only focus on development that uses the framework Flutter.
+The reason for this focus is that it narrows the technical aspects to something manageable.
+So when cosnidering Mobile App development from the perspective of a customer, we believe that there are two key aspects that is of interest for the customer.
+The first being, which "screens" are there in the app, by screens we refere to a collection of Graphical User Interaction (GUI) Elements all accessible in a perticular state of the application, and which GUI elements are present on said screens.
+The second thing is how does those screens and GUI elements behave, when using the application.
+
+Out proposal is then a software that allow the customer to set requirements for the system in a What You See Is What You Get (wysiwyg) envoriment where the customer can create screen, or more generalized a GUI-component, specify which GUI elements (such as Text, Image, Inputfield, Button, etc.) should be present on said screen. This can be translated into "When showing [name]-screen, Then I should see [list of elements]", the only thing missing for being a contract is the pre-condition. For the pre condition we suggest two repositories, an actor repository where the customer can create actors for the system and a entity repository where the customer can create data-structures that they already know about with out the system. To illustrate what a data structure that customer already knows about could be, lets consider a Library, let say that we are developing a system for a Library, the customer then already know that they have books and that a book have a title, a author, etc. All these data points are well known for the customer in their context. So the custoemr can go into the Entity repository create a entity called Book and specify that a book has a title, a author, etc. But the customer cannot specify technical details such as what data type is the title. When creating a screen the customer could then specify given a book with title "Harry Potter" and as a citizen, when i go to the book-detail-scren, i should see a Text element with the data "Harry Potter". This can then be translated into "Given a Book{title: "Harry Potter"} and as a Citizen, When i go to book-details-screen, I should see "Harry Potter"". This could then be converted into executable tests, an example in psydo-code could look like:
+
+\begin{lstlisting}
+    void test_detail_screen(TestHelper Helper){
+        int BookId = Helper->factory->book(title: "Harry Potter")->create();
+
+        Helper->ActAs("Citizen");
+
+        Screen detailScreen = new DetailScreen(BookId);
+
+        assertContains(detailScreen, "Harry Potter");
+    }
+\end{lstlisting}
+
+
+Finally after a customer have specified the requirements for a screen, the screen can now act as preconditions for the more usecase driven requirements. An example of this could be in the wysiwyg envoriment the customer can create a new usecase and specify that it is a usecase for the login screen, then create a event list like: 1) set the Username field to empty 2) click login, and then specify that an error should be shown to the user. This will also be translated into to Hoare Logic, which then can be translated into executable tests.
+

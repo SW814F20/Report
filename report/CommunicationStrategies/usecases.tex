@@ -21,3 +21,18 @@ It will also help if the SUD needs boundaries with in the system, i.e. functiona
 The developers might even create a access layer with in the SUD based of the actors identified in the requirements or groupings of actors.
 
 \subsection{Usecases}
+A usecase is a complete set of events that specifies all the action needed for a perticular actor to achieve a goal with in the system. 
+The set of events should be considered as transaktions - meaning, first the actor does something, then the system respons, then the actor does something, then the system respons and so forth. 
+A usecase is always from the perspective of a perticular actor, therefore it is important to only focus on details relevant for said actor. 
+A actor will have many usecases and a there will be many usecases similiar to one or another - that could be multiple actors having similar usecases or many usecases having similar event traces. 
+The act of defining usecases can help discover requirements for the system, since it forces one to think about how each actor is suppose to interact with the system.
+
+Since the usecases are a complete trace of events for a perticular action or goal, a single usecase can then be considered as a transaction system describing a feature og functionality of the system. 
+The group of all usecases then specifies all the features and functionalities of the system and how they should work. 
+This allows us to consider our software as a set of state transition graphs where stimulus between the actors and the system determine the behaviour of the system.
+
+The notion of usecases does not fit perfectly into our project, since we suspect that it would be impossible for a customer to know how to construct the event traces in a realistic manner. 
+But we can get a lot of inspiration by the notion of usecases. 
+Consider if the customer could specify that "As a [actor]. When I..., then I should be able to..., such that..", if we were able to facilitate such requirements in our system we already have alot of information, firstly we can reason about which actors should have access to which components.
+We can reason about which functionalities of which components should be exposed to the different actors.
+Furthermore the format starts to feel a bit like the "Given, when, then"-model discussed in~\autoref{sec:DbC}, a reader familiar with the agile process Scrum might also recognize that it is very similiar to the User storie template often used in Scrum.
