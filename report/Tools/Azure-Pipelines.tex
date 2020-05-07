@@ -16,12 +16,11 @@ Azure pipelines then listens for these events, and triggers the pipeline to perf
 These tasks include checking that the application follows the coding standards, the code compiles, and runs the unit tests, to check if the new code does not break any of the tested functionality. 
 
 If the pipeline fails and determines that any of the requirements are not fulfilled, the pull request will be blocked until the problems has been resolved.
-This means that there cannot be pushed code, that wont compile, to the development and master branches.
+This means that there cannot be pushed code, that will not compile, to the development and master branches.
 
 This also means that whenever a branch is created from the development branch it will always compile.
 
 The pipelines therefore increases work flow, and forces a higher coding quality, which in the end will yield a better product.
-
 
 
 
