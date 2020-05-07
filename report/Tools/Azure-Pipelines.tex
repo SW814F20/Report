@@ -1,0 +1,29 @@
+\section{Azure Pipelines}
+\label{azurepipelines}
+Azure pipelines is a continues integration tool, that can be configured to run software when events happen.
+In the case of our repositories the events are the following:
+\begin{itemize}
+    \item Every time a commit is pushed
+    \item Every time a pull request is created or updated
+\end{itemize}
+
+A side effect of using Azure pipelines, is that we can integrate it into the pull request process, meaning that we can make this process automated. 
+
+At the start of the project, we decided to follow Git Flow, which requires developers to create pull requests to get their code in to development and master branches.
+This means that all code in development branches and master branches has been reviewed by at least one other developer.
+
+Azure pipelines then listens for these events, and triggers the pipeline to perform a predefined set of tasks.
+These tasks include checking that the application follows the coding standards, the code compiles, and runs the unit tests, to check if the new code does not break any of the tested functionality. 
+
+If the pipeline fails and determines that any of the requirements are not fulfilled, the pull request will be blocked until the problems has been resolved.
+This means that there cannot be pushed code, that wont compile, to the development and master branches.
+
+This also means that whenever a branch is created from the development branch it will always compile.
+
+The pipelines therefore increases work flow, and forces a higher coding quality, which in the end will yield a better product.
+
+
+
+
+
+
