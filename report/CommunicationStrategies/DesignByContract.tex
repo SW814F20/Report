@@ -1,21 +1,21 @@
 \section{Design by Contract}\label{sec:DbC}
 
-Design by Contract is a method that tries to ensure at least two very important aspects of a system, one is reliability and the other is reuseable code [cite paper].
-By reliability, we refer to properties such as correctness and robustness, or in simpler terms the absence of bugs [cite paper].
+Design by Contract is a method that tries to ensure at least two very important aspects of a system, one is reliability and the other is reuseable code~\cite{Bertrand_DbC}.
+By reliability, we refer to properties such as correctness and robustness, or in simpler terms the absence of bugs~\cite{Bertrand_DbC}.
 The method is inspired by how a "human" contract, i.e. a business contract, works.
-In the paper "Applying 'Design by Contract'" by Bertrand Meyer 1992, Meyer identifies two major properties of human contracts [cite paper]:
+In the paper "Applying 'Design by Contract'" by Bertrand Meyer 1992, Meyer identifies two major properties of human contracts~\cite{Bertrand_DbC}:
 \begin{itemize}
     \item Each party expects some benefits from the contract and is prepared to incur some obligations to obtain them.
     \item These benefits and obligations are documented in a contract document.
 \end{itemize}
 
-Meyer also identifies two benefits of having a contract document, which is [cite paper]:
+Meyer also identifies two benefits of having a contract document, which is~\cite{Bertrand_DbC}:
 \begin{itemize}
     \item It protects the client by specifying how much should be done: The client is entitled to receive a certain result.
     \item It protects the contractor by specifying how little is acceptable: The contractor must not be liable for failing to carry out tasks of the specified scope
 \end{itemize}
 
-Another finding Meyer highlights is, "what is an obligation for one party is usually a benefit for the other" [cite paper].
+Another finding Meyer highlights is, "what is an obligation for one party is usually a benefit for the other"~\cite{Bertrand_DbC}.
 
 A contract can be considered in terms of three elements; the precondition which is what needs to exist before the task of the contract can be fulfilled (such as a package for the postman to deliver.), the task for which the contract is concerned about (i.e. deliver the package on behave of the customer), and finally the postcondition which is what is expected to be true after the completion of the task (i.e. the package is delivered to the correct person, the package was delivered on time, etc.).
 
