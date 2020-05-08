@@ -19,7 +19,10 @@ Another finding Meyer highlights is, "what is an obligation for one party is usu
 
 A contract can be considered in terms of three elements; the precondition which is what needs to exist before the task of the contract can be fulfilled (such as a package for the postman to deliver.), the task for which the contract is concerned about (i.e. deliver the package on behave of the customer), and finally the postcondition which is what is expected to be true after the completion of the task (i.e. the package is delivered to the correct person, the package was delivered on time, etc.).
 
-Considering a contract in these three phases can help translate the concept of a human contract into a concept of a contract within a software system. In the paper by Meyers, he considers a sub-routine where all the preconditions are asserted at the beginning of the sub-routine if one or more is not successfully asserted the sub-routine will throw an error and terminate. If all the preconditions are asserted successfully the sub-routine will do its computation and in the end, it will assert the postconditions. If any of the postconditions are not successfully asserted it will again throw an error and terminate.
+Considering a contract in these three phases can help translate the concept of a human contract into a concept of a contract within a software system. In the paper by Meyers, he considers a sub-routine where all the preconditions are asserted at the beginning of the sub-routine.
+If one or more is not successfully asserted, the sub-routine will throw an error and terminate. 
+If all the preconditions are asserted successfully the sub-routine will do its computation and in the end, it will assert the postconditions. 
+If any of the postconditions are not successfully asserted, it will again throw an error and terminate.
 
 This translation of the contract concept is very similar to the Hoare triple known from Hoare Logic, where the Hoare triple takes the form
 
