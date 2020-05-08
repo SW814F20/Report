@@ -35,13 +35,14 @@ Where $P$ denotes what is known to be true before the operation, $Q$ denotes the
 This similarity between Hoare triple and Design by Contract is an advantage for our system. Since many testing methodologies and systems are built around the notion of Hoare Logic. 
 An example of this is the "triple-a"-method from Unit testing, which stand for \textbf{A}rrange, \textbf{A}ct, and \textbf{A}ssert.
 The idea is that if you construct your tests in a manner where you first arrange everything, i.e. preparing the unit for what you are about to test, then you perform the computation and lastly you assert that the operation behaved as expected. 
-This "triple-a"-method is also very similar to the "Given, When, Then"-method known from Behaviour driven development, where the tests are composed and arranged by Given a context, When a specific operation is run, Then we expect a specific change. 
+This "triple-a"-method is also very similar to the "Given, When, Then"-method known from Behaviour driven development, where the tests are composed and arranged by Given a context, When a specific operation has run, Then we expect a specific change. 
 
 We can utilize Design by Contract in our software system, as a method for the customer (or Product Owner) to express the desired functionalities of the system and compile those into executable tests to run on the implementation. 
 This will allow the developers to constantly check whether their implementation is correct and sufficient in regard to the needs of the customer. 
 It will also allow for easier maintenance in the future, due to the possibility to assert whether new implementations or new services support the needs of the customer.
 
-But this also raises another problem, how are we gonna allow the customer to formulate the contracts? 
-Clearly, they are not experts in software development so to expect them to write out the test cases and think about all the units of the SUT would be too much to ask.
+But this also raises another problem. 
+How are we going to allow the customer to formulate the contracts? 
+Clearly, they are not experts in software development, so to expect them to write out the test cases and think about all the units of the SUT, would be too much to ask.
 
 Therefore there is a need for a methodology for expressing these contracts such that a customer would be able to formulate them and would be able to do it in a feasible time frame.
