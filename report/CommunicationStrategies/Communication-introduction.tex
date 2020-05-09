@@ -1,0 +1,22 @@
+As touch upon in~\autoref{par:motivation} and shown in the research paper by Hoda et al.~\cite{Hoda2011TheIO} one of the bigger challenges with agile development processes is the communication with the customer.
+More specifically the research paper by Hoda et al. recognise that the biggest issue is elicitating requirements and getting feedback on whether the implementations are acceptable or not.
+So if we were to build a system that tries to ease the communication between customers and developers, it seems reasonable to fixate on these two factors, that is, elicitating requirements that are well defined and easy to understand for the developers and allow the developers to get fast and reliable feedback to wether their implementation reaches the needs of the customer or not.
+
+This is not a trivial thing to accomplish, since getting concise and precise requirements from customers has shown throughout history to be a very demanding task, and since in~\autoref{par:motivation}, we speculated that the biggest reason that developers were unable to get feedback, is because of time constraint on the customer.
+So if we are to build a tool that introduces value in the communication between developers and customers - we need to be able to verify the implementation without requiring time investment from the customer.
+
+An obvious solution to this is to have a system where the requirements are formally specified in such a way that they can act as acceptance tests for the system.
+Thereby we only need the customer to devote their time to specify the requirements and then the developer would be able to run those requirements as tests on the implementations and assert whether they live up to the needs of the customer or not.
+
+When we say acceptance test, we mean a test that asserts the behavior of the system under test (SUT), is according to the expectations of the users, i.e. the customers.
+And by behavior, we reference two things the actions of the SUT, i.e. what does the interface (graphical or application) allow the users to do, and the correctness of those actions according to the customers' expectations.
+
+For this project, we will only focus on graphical-based user interfaces, so our system should supply an intuitive method for customers to specify which actions should be present in the software, by actions we mean components such as input fields, buttons, navigation, draggable items, etc.
+And what the customer expects to happen when utilizing said actions.
+These specifications should then act as requirements for the software.
+This also implies that our system should be able to take these specifications and turn them into runnable systematic tests that are executable on the actual implementation code.
+
+In order for this to be possible, we need some form of a formal definition of our specification, such that it can be systematically transformed into executable code.
+
+In this chapter, we will specify our formal definition by looking at different techniques for specifying requirements and techniques for asserting behavior of the software.
+We aim to find a silver lining where we can combine the act of specifying a requirement with the act of asserting the behavior of the software. 
