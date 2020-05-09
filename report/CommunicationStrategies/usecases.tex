@@ -1,42 +1,42 @@
 \section{Requirements model}
 
-As a methodology for the customers ability to create a contract that the system under development (SUD) should uphold, we will look at a model for specifying requirements.
-More specificly we will consider the requirements model as presented in the book "Object-Oriented Software Engineering - A Use Case Driven Approach" by Ivar Jacobson~\cite{Jacobson1992}.
+As a methodology for the customer's ability to create a contract that the system under development (SUD) should uphold, we will look at a model for specifying requirements.
+More specifically we will consider the requirements model as presented in the book "Object-Oriented Software Engineering - A Use Case Driven Approach" by Ivar Jacobson~\cite{Jacobson1992}.
 
-We will not focus on the other models from Jacobsons recommended development process, but the requirements model is perticular useful for our solution and therefore we will focus on how he uses the notion of use cases and actors and how that can be adopted into our solution.
+We will not focus on the other models from Jacobson's recommended development process, but the requirements model is particularly useful for our solution and therefore we will focus on how he uses the notion of use cases and actors and how that can be adopted into our solution.
 
 Jacobson specifies two entities in formulating requirements, \textbf{Actors} and \textbf{Usecases}.
-An \textbf{actor} represents a role that a user have in relation to the system, a user might take different roles when interacting with the system, thereby an Actor is not linked directly with a user, but is more a category of users.
-A \textbf{use case} represent something that the users should be able to do with in the system. Each use case takes the perspective of the user and is formulated as a complete list of events in the interaction with the system when utilizing the functionality regarded in the use case.
+An \textbf{actor} represents a role that a user has in relation to the system, a user might take different roles when interacting with the system, thereby an Actor is not linked directly with a user, but is more a category of users.
+A \textbf{use case} represents something that the users should be able to do within the system. Each use case takes the perspective of the user and is formulated as a complete list of events in the interaction with the system when utilizing the functionality regarded in the use case.
 
 \subsection{Actors}
-In more general terms an actor is something that can interact with the system. That could be a person, a machine or another software running on the same machine. 
-A key distinction to make is that, a person, is not limited to be only one type of actor.
-Actors should more be regarded as roles in the system, so if Britta works at a store as a clerk, she will have the actor type clerk when she is working, but in her freetime she might shop in the same store and thereby take the actor role as customer. 
+In more general terms an actor is something that can interact with the system. That could be a person, a machine, or another software running on the same machine. 
+A key distinction to make is that a person is not limited to be only one type of actor.
+Actors should more be regarded as roles in the system, so if Britta works at a store as a clerk, she will have the actor type clerk when she is working, but in her free time, she might shop in the same store and thereby take the actor role as a customer. 
 
-In a broader sense we can consider actors to be everything communicating with the system from outside the system it self.
+In a broader sense, we can consider actors to be everything communicating with the system from outside the system itself.
 
-In our solution we can use the notion of actors to identify roles within the SUD- 
-This will allow the developers and customers to communicate easier since they will have an unified vocabulary when talking about who communicates with the system. 
+In our solution, we can use the notion of actors to identify roles within the SUD- 
+This will allow the developers and customers to communicate easier since they will have a unified vocabulary when talking about who communicates with the system. 
 It will also help if the SUD needs boundaries within the system, i.e. functionalities only available to some actors.
 The customers will then be able to specify a list of actors who should have access to said functionalities, which will help the developers in ensuring correctness.
-The developers might even create an access layer within the SUD based of the actors identified in the requirements or groupings of actors.
+The developers might even create an access layer within the SUD based on the actors identified in the requirements or groupings of actors.
 
 \subsection{Use cases}
 A use case is a complete set of events that specifies all the action needed for a particular actor to achieve a goal within the system. 
-The set of events should be considered as transactions - meaning, first the actor does something, then the system respons, then the actor does something, then the system respons and so forth. 
-A use case is always from the perspective of a particular actor, therefore it is important to only focus on details relevant for said actor. 
-An actor will have many use cases and there will be many use cases similiar to one or another - there could be multiple actors having similar use cases or many use cases having similar event traces. 
-The act of defining use cases can help discover requirements for the system, since it forces one to think about how each actor is suppose to interact with the system.
+The set of events should be considered as transactions - meaning, first, the actor does something, then the system responds, then the actor does something, then the system responds and so forth. 
+A use case is always from the perspective of a particular actor, therefore it is important to only focus on details relevant for the actor. 
+An actor will have many use cases and there will be many use cases similar to one or another - there could be multiple actors having similar use cases or many use cases having similar event traces. 
+The act of defining use cases can help discover requirements for the system since it forces one to think about how each actor is supposed to interact with the system.
 
-Since the use cases are a complete trace of events for a particular action or goal, a single use case can then be considered as a transaction system describing a feature or functionality of the system. 
+Since the use cases are a complete trace of events for a particular action or goal, a single-use case can then be considered as a transaction system describing a feature or functionality of the system. 
 The group of all use cases then specifies all the features and functionalities of the system and how they should work. 
-This allows us to consider our software as a set of state transition graphs where stimulus between the actors and the system determine the behaviour of the system.
+This allows us to consider our software as a set of state transition graphs where stimulus between the actors and the system determines the behavior of the system.
 
-The notion of use cases does not fit perfectly into our project, since we suspect that it would be impossible for a customer to know how to construct the event traces in a realistic manner. 
-However, we can get a lot of inspiration by the notion of use cases. 
+The notion of use cases does not fit perfectly into our project since we suspect that it would be impossible for a customer to know how to construct the event traces in a realistic manner. 
+However, we can get a lot of inspiration from the notion of use cases. 
 Consider if the customer could specify that "As a [actor]. When I..., then I should be able to..., such that..".
 If we were able to facilitate such requirements in our system, we already have much information.
 Firstly we can reason about which actors should have access to which components, and can reason about which functionalities which components should be exposed to the different actors.
 Furthermore, the format starts to feel a bit like the "Given, when, then"-model discussed in~\autoref{sec:DbC}.
-A reader familiar with the agile process Scrum might also recognise that it is very similiar to the, User Stories template, often used in Scrum.
+A reader familiar with the agile process Scrum might also recognize that it is very similar to the User Stories template, often used in Scrum.
