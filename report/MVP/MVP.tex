@@ -1,0 +1,23 @@
+This chapter will talk about what our Minimum Viable Product (MVP) is, and we will in the following chapters go though how we have developed this MVP.
+
+\section{What is our MVP?}
+A MVP is a piece of product, that gives some sort of value, with the least amount of work went into it.
+It will not have many advanced features, but just showcase the basic functionalities, so the product can be tested, and further be worked on, to get all of the wanted features.
+This will give some sort of idea of how good the product will be, and if the product fails, not much time is lost, because of the amount of time working on it. \cite{whatIsMVP}
+
+With this in mind, our MVP will have the following features:
+
+\begin{itemize}
+    \item Create a new task
+    \item Create a new screen
+    \item Create a new application
+    \item Be able to log in and see all of the user projects
+    \item Edit a screen 
+    \item The app should communicate with GitHub, meaning create a new repository and create new issues
+    \item Have a testing module, that can automatically create tests
+    \item The customer should be able to see the status of each issue, via a Kanban board in the application
+\end{itemize}
+
+We want to have a product, where the user can log into the system, and can create new tasks, and can create or modify a screen, which in turn, will generate issues on GitHub, which the developer knows how to handle, and they can use whatever flow they want.
+Lastly, when the developers want to know if they have solved the issue or not, they will use our testing module, that will generate the tests for a given screen, and will translate them into Flutter, that the developers can run. The reason for Flutter, can be seen in~\autoref{sec:combiningtheparts} 
+If all tests are green, meaning that they did not fail, then the developers have solved the specific issue.
