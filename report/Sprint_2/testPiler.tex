@@ -1,0 +1,67 @@
+\section{Test Generator}
+In this sprint, we began the implementation of our Test Generator module. 
+We choose to develop the module as a plain Dart package, the reason for this is that as a Dart package the module can be imported into many different projects.
+Thereby allowing the Test Generator to be used in another context than a flutter in the future, the reason we choose to build it in Dart lang is that it is the same language that flutter uses but also that the language allows compilation to many targets, it can be compiled as a stand-alone program for any x86 machine, or it can be transpiled into Javascript, or as is the case with Flutter it can be compiled to run on Mobile devices. 
+So choosing Dart gives us a lot of flexibility in the future if needed.
+
+The Test Generator Module was developed similarly as a compiler would be implemented.
+It takes in the JSON representation of a screen and then uses a visitor pattern to generate the tokens representing the JSON structure.
+These tokens are then sent to a code generator that once again uses a visitor pattern to generate the correct code.
+The module is architectured in such a way that it can have many code generators, and the user of the module can even inject third-party code generators.
+This allows the tool to be highly extendable without requiring changes to the actual module itself.
+It means that for the module to support other frameworks or languages we only need to develop the code generator for the new framework of language and inject it into the module.
+Furthermore, the module has abstracted the file system, such that one can inject a file system abstraction since the module will per default deliver the generated code as files on the file system. If for some reason the consumer of the module would like the files to only live in memory they can just inject an in-memory-filesystem.
+
+The following is a code snippet of how as a consumer of the module, you compile your tests.
+
+\begin{lstlisting}[language=dart]
+  var jsonRepresentaion = '{ "id": 4, "name":"Homepage", "elements":[...]}'; //The output from the Mobile application
+  
+  var te = TestEngine(); // The engine it self, it can parse the json and use a codegenerator
+  var fs = LocalFileSystem(); // The abstraction layer for file system
+  fs.currentDirectory = 'PATH_TO_OUPUT'; // The path to store the output test suite
+  
+  var UIspec = te.parseLayout(jsonRepresentaion); // Parse the JSON
+  var generator = FlutterTestGenerator(packageName: 'DESIRED NAME OF TEST PACKAGE'); // An instance of a compatiable code generator
+  var exporter = PackageExporter(fs); // A instance of a compatiable exporter.
+
+  UIspec.accept(generator); // Use the code generator to generate the test suite
+  exporter.export(generator.package); // Use the exporter to export the test suite to the file system.
+\end{lstlisting}
+
+As can be seen from the snippet even details such as how to export the code into files can be changed by the consumer, we supply a package exported, but if you like you can create your own and inject that instead. 
+In line 11 there is an example of how to inject a code generator into the system, simply supply in the accept call on the test engine.
+
+The output of this is an entire Test Suite for Flutter since the snippet uses the FlutterTestGenerator. 
+To run the test suite one simply needs to add to their project and implement an abstract class created by the test engine. 
+The reason for having this abstract class is that there are details our test engine cannot know about the system under development.
+For example, what is the Homepage inside the codebase?
+Therefore every time there is a need for information that is outside the knowledge base of the test engine we create a method in a said abstract class that is meant for the developers to implement. 
+After implementing the test suite uses these functions to correctly test the system.
+Below is a code snippet of how to integrate the test suite in a Flutter code base.
+
+\begin{lstlisting}[language=dart]
+    import 'package:flutter/src/widgets/framework.dart'; // Import of Flutter widgets
+    import 'package:login_page_demo/main.dart'; // Import the actual page that should be tested
+    
+    import 'TestSuites/testSuites.dart'; // Import of the generated test suite.
+    
+    // The implementation of the abstract class from the test suite.
+    class AFAdaptor extends TestSuites {
+      
+      // The implementation of a helper function
+      // This allows the test suite to get the screen 
+      // that is suppose to be the login screen and run tests on it.
+      @override
+      Widget getLoginPageWidget() {
+        return MyApp();
+      }
+    }
+    
+    // Standard Dart test setup
+    void main () {
+      var af = AFAdaptor(); // Instatiation of the test suite.
+    
+      af.run(); // Run all tests in the generated test suite.
+    }
+\end{lstlisting}
