@@ -1,0 +1,31 @@
+\section{Test Generator Plugin}
+We have chosen to only focus on Flutter development since it allows us to narrow the technical challenges into a known domain for the members of the group.
+We envision a plugin for Flutter that can be installed and will run as part of the test suite in the Flutter application.
+Since the Flutter Framework has a pre-configured test framework we envision our plugin to generate code that is compatible with the build-in test environment of Flutter.
+Thereby leaving next to no setup required.
+
+We envision our plugin to be configured to connect to the task and screen definitions from the application via a shared backend API.
+Our plugin will then be able to parse the data structure used by the Mobile Customer Application to automatically generate executable tests.
+
+We can already now see some big issues with this approach such as, what if the developer has no or unstable internet connection.
+What about implementation details that are not part of the knowledge domain of the Mobile Customer Application.
+
+Therefore we envision a compromise from our initial idea, we will still build a plugin but instead of building a Flutter only plugin, we will build a more general package that can be used either in a Flutter project or in a stand-alone project. 
+This package would then have the ability to connect to the backend and generate the test suite - the output would then be what we will call the test artifacts.
+
+The test artifacts are simply the generated target code exported to files and stored on the disc. We then envision the developer to integrate the test artifacts into their development project. 
+This means that if the developer does not have internet access and thereby doesn't have the ability to get the newest tests, they can simply run the old test artifacts and generate the new test artifacts whenever regaining access to the internet. Another benefit of this is the execution time, not having to make an HTTP-roundtrip every time the developer runs the tests, will make the whole test suite run faster.
+
+The next compromise is about boundaries of the test artifacts we generate, these artifacts are only concerned with acceptance tests, meaning the most outer layer of the system under test. 
+This also means that our test artifacts should not be tightly coupled to implementation details, as we trust in the craftsmanship of the developers and assume that they have tested the implementation details them selfs.
+We take the stand that the actual implementation is a black box for our artifacts, and in order to do so we have to segregate our test artifacts from the system under test.
+We believe this can be done by having the test generator create an interface that should be used to run the test artifacts.
+This interface should then be implemented by the developers of the system under test, which will allow our test artifacts to e.x. not know about how to get the "login page" but simply ask the interface to deliver the "login page".
+Another use case we envision for the segregation interface is for functionalities such as authentication, rather our test artifacts know how to authenticate users and check a given user authentication, we can simply ask the interface to authenticate a given user or to report back on the authentication status of a user.
+Since the implementation of the interface is done by the developers they also have the ability to swap implementations as they please, which can be beneficial e.x. when having to use mocks or spies instead of a real implementation.
+
+Another benefit of the segregation interface is that we can have data structures known by the users of the Mobile Customer Application, but allow the developers to use whatever data structures they see fit. Imagine the interface specifying a factory-method for a user, when implementing the developer can use the actual system data structure or structures for representing a user and simply morph it into the one specified in the Mobile Customer Application. Thereby allowing total freedom to the developers while stile having the ability to create tests that depend on specific data structures.
+
+On~\autoref{fig:ideaoverview} there is a rough sketch of how we envision the entire eco-system to work.
+
+\figur{1}{images/idea-overview.png}{A rough sketch of the system}{fig:ideaoverview}
