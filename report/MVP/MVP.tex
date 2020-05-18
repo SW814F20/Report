@@ -1,24 +1,31 @@
 This chapter will talk about what our Minimum Viable Product (MVP) is, and we will in the following chapters go though how we have developed this MVP.
 
 \section{What is our MVP?}
-A MVP is a piece of product, that gives some sort of value, with the least amount of work went into it.
-It will not have many advanced features, but will just showcase the basic functionalities of the product, so the product can be tested, and futher developemnt can be based upon the test, to get all of the wanted features.
-This will give the customer an idea of how good the product will be, and may also give some early signs to the success of the product. 
-If the product fails, not much time is lost, because of the amount of time working on it. \cite{whatIsMVP}
+As we have limited time in this project, to create a product, we will focus on creating the MVP.
+Our MVP will give value to both Product Owners(PO) and developers.
+It will give value to the PO, as they can formalize their requirements in their domain, and can see what the progress is.
+The value for the developers is that they will have tests, they can run, to see if their solution lives up to the requirement set by the PO, and there will be no confusion about the requirements because we will handle how to generate the tests. 
 
-With this in mind, our MVP will have the following features:
+The purpose of this MVP is to give the PO an idea of how to formalize their requirements, in a mobile app, meaning that they can use it anytime they want, and anywhere, as long as they have a connection to the internet.
+Furthermore, it will also give the developers an idea of how the workflow will be like, and how they can get more or less instant feedback, regarding if they have solved the task at hand, or not. 
 
-\begin{itemize}
-    \item Create a new task
-    \item Create a new screen
-    \item Create a new application
-    \item Be able to log in and see all of the user projects
-    \item Edit a screen 
-    \item The app should communicate with GitHub, meaning create a new repository and create new issues, which the developers will understand how to handle
-    \item Have a testing module, that can automatically create tests, which the developers can run, to see if they have solved the issue or not
-    \item The customer should be able to see the status of each issue, via a Kanban board in the application
-\end{itemize}
+The app will be basic, however, it will showcase how to use it, and what the progress is.
 
-All of these features will give this project a good amount of value, as it highlights how we want the customer to make requirements for the developers, and how the developers can find out, rather fast, if they have lived up to the requirements set by the customer on a given task.
-Furthermore, the customer can at any time, see the progress, in terms of which tasks are not started, being worked on, and which ones are done.
- 
+Below is a ranking of the critical features we need in the MVP:
+
+\begin{enumerate}
+    \item PO should be able to create tasks and screens in the application
+    \item Developers should be able to run the automated tests
+\end{enumerate}
+
+The less important features we have, which is somewhat trivial to make is also ranked according to their importance:
+
+\begin{enumerate}
+    \item PO edit screens
+    \item PO can see the status of each task, via a Kanban board in the application
+    \item PO can create a new application, resulting in a new GitHub repository
+    \item Have a login system
+\end{enumerate}
+
+In the next couple of sprints, we will have two projects in one, meaning that we will use the time to figure out how we should make the testing module, and the other project, will be how we should create the mobile application itself.
+The mobile application should be able to convert the inputs the PO puts in, into something that the testing module will understand, and can create the tests out from this data structure we will have.
