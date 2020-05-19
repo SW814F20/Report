@@ -13,7 +13,7 @@ These tokens are then sent to a code generator that once again uses a visitor pa
 The module is architectured in such a way that it can have many code generators, and the user of the module can even inject third-party code generators.
 This allows the tool to be highly extendable without requiring changes to the actual module itself.
 It means that for the module to support other frameworks or languages we only need to develop the code generator for the new framework and inject it into the module.
-Furthermore, the module has abstracted the file system, such that one can inject a file system abstraction since the module will per default deliver the generated code as files on the file system. If for some reason the consumer of the module would like the files to only live in memory they can just inject an in-memory-filesystem.
+Furthermore, the module has abstracted the file system, such that one can inject a file system abstraction since the module will per default deliver the generated code as files on the file system. If for some reason the consumer, by consumer we refer to the entity using the package, of the module would like the files to only live in memory they can just inject an in-memory-filesystem.
 
 The following is a code snippet of how as a consumer of the module, you compile your tests.
 
