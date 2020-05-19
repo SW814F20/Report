@@ -37,11 +37,15 @@ An example of this is the "triple-a"-method from Unit testing, which stand for \
 The idea is that if you construct your tests in a manner where you first arrange everything, i.e. preparing the unit for what you are about to test, then you perform the computation and lastly you assert that the operation behaved as expected. 
 This "triple-a"-method is also very similar to the "Given, When, Then"-method known from Behaviour driven development, where the tests are composed and arranged by Given a context, When a specific operation has run, Then we expect a specific change. 
 
-In Meyer's paper, he also introduces another part of the Design By Contract methodology, which is the Class invariant. The Class invariant concerns itself with what must be true always for all instances of a class (or in human contract terms, an instance of a particular service contract). An example could be that the postman, who is supposed to deliver the package, has a means of transportation both before the delivery (pre-condition) and after the delivery (post-condition). Invariants are thereby what must always be true independent of the operation.
+In Meyer's paper, he also introduces another part of the Design By Contract methodology, which is the Class invariant. The Class invariant concerns itself with what must always be true for all instances of a class (or in human contract terms, an instance of a particular service contract). An example could be that the postman, who is supposed to deliver the package, has a means of transportation both before the delivery (pre-condition) and after the delivery (post-condition). Invariants are thereby what must always be true independent of the operation.
 
-In our project we can use the notion of invariants to ensure a couple of things, one example could be a contract about searching, written in the "Given, When, Then" form it could be "Given a book named Harry Potter, When I search Harry, Then I should see Harry Potter in the results" an invariant of this test could be that there must exist a text-input element for searching and the user should be able to type in it.
+In our project we can use the notion of invariants to ensure a couple of things. 
+An example could be a contract about searching, written in the "Given, When, Then" form it could be "Given a book named Harry Potter, When I search Harry, Then I should see Harry Potter in the results".
+An invariant of this test could be that there must exist a text-input element for searching and the user should be able to type in it.
 
-Another, maybe more abstract, way we can use invariants is to isolate our contracts from the implementation details, we can, therefore, state an invariant that we assume the underlying implementation of e.x. the data management system is tested and working, therefore we need not test the data management system. If our tests postcondition can assert that a given change to the data has happened, we can assume it is persisted in the data management system.
+Another, maybe more abstract, way we can use invariants is to isolate our contracts from the implementation details.
+We can therefore, state an invariant that we assume the underlying implementation of e.g. the data management system is tested and working. 
+Therefore we need not to test the data management system. If our tests postcondition can assert that a given change to the data has happened, we can assume it is persisted in the data management system.
 
 The reason we would be interested in such an assumption is that our project is focused on accepting tests, therefore it would be beneficial to have them consider the SUT as a black box and only consider stimuli to and from the system.
 
