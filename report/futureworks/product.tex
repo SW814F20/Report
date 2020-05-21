@@ -2,26 +2,28 @@
 Obviously the state of the product, at the time of writing, is not anywhere near industry-ready.
 Although the product is at a stage where we can start to validate certain properties.
 
-Therefore we suggest that Usability Tests are conducted, we have included one in this report in~\autoref{cha:usability} that could serve as the first test or inspiration.
+Therefore we suggest that Usability Tests are conducted.
+We have included one in this report in~\autoref{cha:usability} that could serve as the first test or inspiration.
 
 \subsection{Usability tests}
-Whether the suggested usability test is chosen or not, it would be of most importance to conduct at least two usability tests, in order to validate the product actually is a solution.
+Whether the suggested usability test is chosen or not, it would be of most importance to conduct at least two usability tests, in order to validate the product to be an actually solution and how good it might be.
 The first would be a usability test concerned with the customers and the use of the tablet application.
-To determine whether it is at all usable for them and that it actually helps them.
-Since we did not have the opportunity to test and validate some of the design choices in the application, there is certain to be issues for the real users, it is important to locate these flaws in the design.
-Also we have designed the application from our context and needs, these also need to be validated against real customers' context and needs.
-The second usability test should be concerned with the developers, it should help answer questions such as; do the generated test add value to their work process? 
-Do they fell the product eliminates the time spent waiting on customer approval?
+To determine whether it is at all usable for them and if it actually helps them.
+Since we did not have the opportunity to test and validate some of the design choices in the application, there is certain to be issues for the real users, which is important to locate these flaws in the design.
+We have designed the application from our context and needs, which needs to be validated against real customers' context and needs.
+The second usability test should be concerned with the developers.
+This test should help answer questions such as; do the generated test add value to their work process? 
+Do they feel the product eliminates the time spent waiting on customer approval?
 Does it help them build what the customer actually wants? (meaning prevent over-development or under-development)
 How do they like the process of implementing the generated test artifacts, do they feel in control of the test or do they feel enslaved by them?
 
-In order to truly validate that our product actually is capable of solving the problems it is of most importance to have conducted at least the two types of usability tests mentioned above.
+In order to truly validate that our product actually is capable of solving the problems, it is of most importance to have conducted at least the two types of usability tests mentioned above.
 We suggest this is done before any considerations regarding adding more features to the product, to ensure the relevance of the product.
 
 \subsection{Make the Product Industri-Ready}
 When it comes to features of the product it is, at the time of writing, quite sparse.
 The reason for which is a deliberate choice by this project group, since it at this point contains all the features we find necessary to conduct the usability tests.
-But with that said, the current feature set leaves the product none-useable for the industry.
+But with that said, the current feature set leaves the product non-usable for the industry.
 So now we would like to suggest a set of features that we believe the product is missing for the product to potentially be ready for industry use.
 
 We find it crucial to implement the actor and entity repositories, such that the product can formulate both pre-conditions and invariants.
@@ -32,19 +34,20 @@ An example of this could be a Text-element should show the data point Title from
 Doing so would allow the tests to have pre-conditions such as "Given a Book with Title 'Harry Potter', When going to book details, Then 'Harry Potter' should be present in the Header-element".
 Without this ability the test can actually only test the presence of a UI-element but not the value.
 
-We also suggest that an actor repository is implemented, this repository should allow the customer to name different actors.
-This will allow the customer to specify which actor or actor is performing a particular task.
+We also suggest that an actor repository is implemented.
+This repository should allow the customer to name different actors.
+This will allow the customer to specify which actor is performing a particular task.
 This can be used for making tests concerned with authentication, by creating a test for each specified actor and perform the task as a said actor, and then also create a test for each actor not specified (including no actor) and assert the task is not legal.
 This can be considered the invariant of the Design by Contract.
 
-With the two repositories implemented as suggested we believe that the product would be usable for the industry to start and adopt.
-Altho there are still a couple of features that we would like to suggest.
+With the two repositories implemented as suggested, we believe that the product would be usable for the industry to start and adopt.
+Although there are still a couple of features that we would like to suggest.
 These features are more concerned with expanding the product's capabilities.
 
 \subsection{Expandability suggestions}
 If one were to expand the functionality of the product we believe that an obvious expansion would be to support interaction specifications and be able to generate tests for interaction.
 We suggest that when creating a task in the application it should be possible for the customer to specify interactions such as "When the login field is left empty, Then I should see an error message saying 'invalid credentials'" this should then be translated into executable tests. 
-If such an expansion where to be considered we would encourage to also consider interaction such as dragging, clicking, authorization, scrolling, etc.
+If such expansion where to be considered we would encourage to also consider interaction such as dragging, clicking, authorization, scrolling, etc.
 If it were possible, in the tablet application, to create specifications that take all these interactions into account and then automatically can generate tests, we believe that the product would be very beneficial for both the customers and the developers.
 Since it would now be possible to specify many of the most common behaviors of a Graphical User Interface.
 
