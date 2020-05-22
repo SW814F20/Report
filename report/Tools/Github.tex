@@ -7,7 +7,7 @@ GitHub is also linked to our Azure Pipelines as described in~\autoref{azurepipel
 We use the principles of Gitflow, that requires developers to create a branch for each new feature, hot fixes and bug fixes. 
 The branches can then be merged back into their respective branches when the branch is completed.
 This is done using pull requests, which has to be approved by at least one other developer.
-This ensures that no code is merged into the main branches, with approval of at least one other developer.
+This ensures that no code is merged into the main branches, without approval of at least one other developer.
 
 \begin{figure}[H]
     \centering
@@ -25,4 +25,8 @@ It allows any Product Owner with no Git or GitHub experience, to create issues a
 
 Our application also allows the Product Owner to see communication between developers, and intervene and make sure that the developers are on track.
 
-And since the application is already integrated with GitHub it was easy to implement a way for the Product Owner to be updated on the progress without the developers having to actively do so. This is done by having the developer update the labels on the issue on GitHub, and the results in the application showing the status of the different issues. 
+And since the application is already integrated with GitHub it was easy to implement a way for the Product Owner to be updated on the progress without the developers having to actively do so.
+This is done by having the developer update the labels on the issue on GitHub, and the results in the application showing the status of the different issues. 
+
+In this project we only implemented GitHub, since it is something we are very familiar with, but any alternative to GitHub such as BitBucket, Phabricator, GitLab, Atlassian, SourceForge or Launchpad would work just as well. However, they each would require specific implementation to be supported.
+Such an implementation would likely be trivial and not require a lot of implementation, but for our MVP GitHub is enough as a prof of concept.
