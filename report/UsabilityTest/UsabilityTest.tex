@@ -7,41 +7,67 @@ The test is intended to test most of the general flow in the application, and te
 The test is also designed to not indicate where the different elements are located on the screen.
 This ensures that the elements used in the test should be intuitive to find and interact with. 
 
-\begin{enumerate}
-    \item Open the Application called “Flutter Application Editor”
-    \item A login screen should be visible
-    \item Tap the username field
-    \item Enter “Graatand” on the keyboard
-    \item Tap the password field
-    \item Enter “Password” into the password field
-    \item Tap the login button
-    \item The application selecting screen should be visible after a few seconds of loading
-    \item Tap any of the showing applications
-    \item A new screen should be visible showing a dashboard
-    \item Tap the “Show tasks” icon
-    \item A kanban board should be visible
-    \item Click the “+” icon
-    \item The new tasks screens should be shown
-    \item The create task button should be disabled and non-functional 
-    \item Tap the task name field
-    \item Enter a name for the task
-    \item Tap the task description field
-    \item Enter a description for the task
-    \item Tap the priority drop down box
-    \item Select a priority
-    \item Hide the keyboard
-    \item Press the “Create Screen” button
-    \item Tap the screen name field
-    \item Enter a name for the screen
-    \item Tap the create screen button
-    \item A box saying that the screen has been created should be visible within a few seconds
-    \item Discard the box by pressing the “ok” button
-    \item The new task screen should be visible again, with all the information entered before
-    \item There should be some text saying which screen is selected
-    \item The create task button should now be enabled
-    \item Tap the create task button
-    \item A box saying that the task was created successfully should be visible within a few seconds
-    \item Tap the “ok” button
-    \item The task screen should be visible
-    \item The newly created task should be visible in the “not started” column
-\end{enumerate}
+
+
+\begin{figure}[H]
+    \begin{enumerate}
+        \item Open the Application called “Flutter Application Editor”
+        \item A login screen should be visible
+        \item Tap the username field
+        \item Enter “Graatand” on the keyboard
+        \item Tap the password field
+        \item Enter “Password” into the password field
+        \item Tap the login button
+        \item The application selecting screen should be visible after a few seconds of loading
+        \item Tap any of the showing applications
+        \item A new screen should be visible showing a dashboard
+    \end{enumerate}
+    \caption{Login usability test.}
+    \label{loginUsabilityTest}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{enumerate}
+        \item Perform the steps to login from \autoref{loginUsabilityTest}
+
+        \item Tap the “Show tasks” icon
+        \item A kanban board should be visible
+        \item Click the “+” icon
+        \item The new tasks screens should be shown
+        \item The create task button should be disabled and non-functional 
+        \item Tap the task name field
+        \item Enter a name for the task
+        \item Tap the task description field
+        \item Enter a description for the task
+        \item Tap the priority drop down box
+        \item Select a priority
+        \item Hide the keyboard
+        \item Perform the steps to create a screen from \autoref{createScreenUsabilityTest}
+        \item Tap the create task button
+        \item A box saying that the task was created successfully should be visible within a few seconds
+        \item Tap the “ok” button
+        \item The task screen should be visible
+        \item The newly created task should be visible in the “not started” column
+    \end{enumerate}
+    \caption{Create Task usability test.}
+    \label{createTaskUsabilityTest}
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \begin{enumerate}
+        \item Press the “Create Screen” button
+        \item Tap the screen name field
+        \item Enter a name for the screen
+        \item Tap the create screen button
+        \item A box saying that the screen has been created should be visible within a few seconds
+        \item Discard the box by pressing the “ok” button
+        \item The new task screen should be visible again, with all the information entered before
+        \item There should be some text saying which screen is selected
+        \item The create task button should now be enabled
+    \end{enumerate}
+    \caption{Create Screen usability test.}
+    \label{createScreenUsabilityTest}
+
+\end{figure}
