@@ -42,7 +42,7 @@ In Meyer's paper, he also introduces another part of the Design By Contract meth
 In our project we can use the notion of invariants to ensure a couple of things. 
 An example could be a contract about searching, written in the "Given, When, Then" form it could be "As a Citizen, Given a book named Harry Potter, When I search Harry, Then I should see Harry Potter in the results".
 An invariant of this test could be the "as a Citizen" part, since we need to be a citizen before the pre-condition that the book needs to exists and we need to still be a Citizen after the search results appear.
-This also means that we can test the opposite of the invariance which could be a executeable test that ensures that when you are acting as anything else than a Citizen the application will show an error when trying to search.
+This also means that we can test the opposite of the invariance which could be an executeable test that ensures that when you are acting as anything else than a Citizen the application will show an error when trying to search.
 
 Another, maybe more abstract, way we can use invariants is to isolate our contracts from the implementation details.
 We can therefore, state an invariant that we assume the underlying implementation of e.g. the data management system is tested and working. 
