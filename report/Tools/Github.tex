@@ -1,12 +1,12 @@
 \section{Git and GitHub}
-In this project, we used GitHub to host our report LaTeX code, and the source code for our flutter application.
-We have used Git to interact with GitHub and push and pull code. 
+In this project, we use GitHub to host our report LaTeX code, and the source code for our flutter application.
+We use Git to interact with GitHub and push and pull code. 
 
-GitHub is also linked to our Azure Pipelines as described in~\autoref{azurepipelines}.
+GitHub is linked to our Azure Pipelines as described in~\autoref{azurepipelines}.
 
 We use the principles of Gitflow, that requires developers to create a branch for each new feature, hot fixes and bug fixes. 
-The branches can then be merged back into their respective branches when the branch is completed.
-This is done using pull requests, which has to be approved by at least one other developer.
+The branches can then be merged back into their respective branches when the implementation is completed.
+This is done using pull requests, which have to be approved by at least one developer.
 This ensures that no code is merged into the main branches, without approval of at least one other developer.
 
 \begin{figure}[H]
@@ -25,8 +25,9 @@ It allows any Product Owner with no Git or GitHub experience, to create issues a
 
 Our application also allows the Product Owner to see communication between developers, and intervene and make sure that the developers are on track.
 
-And since the application is already integrated with GitHub it was easy to implement a way for the Product Owner to be updated on the progress without the developers having to actively do so.
+Since the application is already integrated with GitHub it was easy to implement a way for the Product Owner to be updated on the progress without the developers having to actively do so.
 This is done by having the developer update the labels on the issue on GitHub, and the results in the application showing the status of the different issues. 
 
 In this project we only implemented GitHub, since it is something we are very familiar with, but any alternative to GitHub such as BitBucket, Phabricator, GitLab, Atlassian, SourceForge or Launchpad would work just as well. However, they each would require specific implementation to be supported.
-Such an implementation would likely be trivial and not require a lot of implementation, but for our MVP GitHub is enough as a prof of concept.
+Such an implementation would likely be trivial, by changing the API and endpoints, which does not require a lot of implementation, but for our MVP GitHub is enough as a proof of concept.
+This is because all the products mentioned all are built on Git, and share a lot of functionality. 

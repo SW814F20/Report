@@ -7,8 +7,9 @@ The reason we choose to build it in Dart language is that it is the same languag
 It can be compiled as a stand-alone program for any x86 machine, or it can be transpiled into Javascript, or as is the case with Flutter, it can be compiled to run on Mobile devices. 
 So choosing Dart gives us a lot of flexibility in the future if needed.
 The disadvantages with using dart is that it is a fairly new language that is not widely adopted.
-This can mean that new commers can have a hardtime understanding how it works and get qualitive learning resources.
-It also means that the language it self is not as mature as e.x. Java or C\#.
+
+This can mean that newcomers can have a hard time understanding how it works and get qualitive learning resources.
+It also means that the language itself is not as mature as Java or C\#.
 While the Dart Language is open source, and we see this as a strength, it also comes with some draw backs. 
 Due to the inmatureness of Dart there has been situation where Linux users where unable to compile Dart code, due to a change in the Linux Kernel. 
 Since Dart is Open Source and there is thereby no company behind with the incentiment to fix such issues, it took the community of Dart over a month to fix it.
@@ -22,9 +23,9 @@ This allows the tool to be highly extendable without requiring changes to the ac
 It means that for the module to support other frameworks or languages we only need to develop the code generator for the new framework and inject it into the module.
 Furthermore, the module has abstracted the file system, such that one can inject a file system abstraction since the module will per default deliver the generated code as files on the file system. If for some reason the consumer, by consumer we refer to the entity using the package, of the module would like the files to only live in memory they can just inject an in-memory-filesystem.
 
-The following is a code snippet of how as a consumer of the module, could compile their tests using the package.
+On~\autoref{snippet:TestCompile} it is shown how a consumer of the module can compile their tests.
 
-\begin{lstlisting}[language=dart, caption={How to configure and use the Test Generator Package.}]
+\begin{lstlisting}[language=dart, caption={How to configure and use the Test Generator Package.}, label={snippet:TestCompile}]
   var jsonRepresentaion = '{ "id": 4, "name":"Homepage", "elements":[...]}'; //The output from the Mobile application
   
   var te = TestEngine(); // The engine it self, it can parse the json and use a codegenerator
