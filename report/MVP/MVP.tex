@@ -13,18 +13,22 @@ The value for the developers is that they will have tests, they can run, to see 
 
 The purpose of this MVP is to give the PO an idea of how to formalize their requirements, in a mobile app, meaning that they can use it anytime they want, and anywhere, as long as they have a connection to the internet.
 Furthermore, it will also give the developers an idea of how the workflow will be like, and how they can get more or less instant feedback, regarding if they have solved the task at hand, or not. 
-The app will be basic, however, it will showcase how to use it, and what the progress is.
+The app will be basic, however, it will showcase how to use it, and what the progress is. 
+
+This MVP will only focus on the UI elements, meaning that we will not make any implementations in regards to the class invariant, which is proposed in~\autoref{sec:DbC}.
+The reason why, is that we see more value gathered from the workflow of the application, where the PO can create and edit screens.
+Furthermore, it will not give us much value in terms of the learning experience, as this is somewhat trivial to do, whereas the critical features are more complex and give us more learning experience, in our opinion.
 
 Below is a list of the critical features we need in the MVP.
 The reason why these are critical features is that we need them to give value to both PO's and developers.
 If we do not have these features, the MVP will not give any value to these two.
 Furthermore, these features are those that give us, the project group, most learning experience, as we try to find out if it is possible to create a GUI, which will help PO's to communicate their requirements to developers, in an environment where the PO, does not need to leave their domain, and they can see the progress at all times, while the developers can get feedback in seconds.
 
-\begin{enumerate}
-    \item PO should be able to create tasks and screens in the application
-    \item PO should be able to edit a screen with the needed functionality they want
+\begin{itemize}
+    \item PO should be able to create and priorities tasks and screens in the application
+    \item PO should be able to edit a screen
     \item Developers should be able to run the automated tests
-\end{enumerate}
+\end{itemize}
 
 The less important features we have, which somewhat trivial to make are ranked according to their importance:
 
@@ -34,5 +38,16 @@ The less important features we have, which somewhat trivial to make are ranked a
     \item PO can create a new application, resulting in a new GitHub repository
     \item Have a login system
 \end{enumerate}
+
+Looking at the MVP, we had to make some choices, in terms of which features we must have in our MVP, the ones that should be in the MVP, and which features we will not implement.
+The features we will not implement in our MVP, but some features that should be considered if this project should be expanded and improved:
+
+\begin{itemize}
+    \item PO should be able to create entities, such as a user object
+    \item PO should be able to create a class invariant in the system, such as the user should be authorized before and after searching for a book
+    \item PO should be able to create pre-conditions, such as "before going to user profile, they should be authorized"
+    \item Be able to link two screens up, via a button press
+    \item PO should be able to write comments on a task if the developers have some comments
+\end{itemize}
 
 In the next couple of sprints, we will have two projects in one, meaning that we will use the time to figure out how we should make the testing module, and the other project, will be how we should create the mobile application itself.
