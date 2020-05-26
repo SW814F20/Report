@@ -9,13 +9,31 @@ We envision our plugin to be configured to connect to the task and screen defini
 Our plugin will then be able to parse the data structure used by the Mobile Customer Application to automatically generate executable tests.
 
 We can already now see some big issues with this approach such as, what if the developer has no or unstable internet connection.
-What about implementation details that are not part of the knowledge domain of the Mobile Customer Application.
+What about implementation details that are not part of the knowledge domain of the Mobile Customer Application, such as data management layer or authentication strategies, how are we suppose to interact with those?
 
 Therefore we envision a compromise from our initial idea. 
 We will still build a plugin, but instead of building a Flutter only plugin, we will build a more general package that can be used either in a Flutter project or in a stand-alone project.
 Such a general package would allow the development team to have full control over how their tooling pipeline is constructed.
-For some development teams it would be fine to have our solution tight coupled directly into the implementation code base, for other teams, it would be seen as a risk to rely so heavily on third party tooling, and they can instead create a simple program that uses our package and thereby decouple their implementation code base from our package. 
+
+For some development teams it would be fine to have our solution tight coupled directly into the implementation code base, as shown on~\autoref{package_in_futter}, for other teams, it would be seen as a risk to rely so heavily on third party tooling, and they can instead create a simple program that uses our package and thereby decouple their implementation code base from our package, as shown on~\autoref{package_outside_flutter}. 
+
 The package should then have the ability to connect to the backend and generate the test suite - the output would then be what we will call the test artifacts.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{images/Embedded-in-flutter.png}
+        \caption{Diagram of the package inside a Flutter project.}
+        \label{package_in_futter}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{images/Decoupled-from-flutter.png}
+        \caption{Diagram of the package decoupled from Flutter project.}
+        \label{package_outside_flutter}
+    \end{minipage}
+\end{figure}
 
 The test artifacts are simply the generated target code exported to files and stored on the disc. 
 If the developer team has choosen to use our package in their Flutter implementation codebase the package could be configured to override the old artifacts and repopulate with the new ones.
