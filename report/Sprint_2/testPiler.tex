@@ -8,8 +8,8 @@ It can be compiled as a stand-alone program for any x86 machine, or it can be tr
 So choosing Dart gives us a lot of flexibility in the future if needed.
 The disadvantages with using dart is that it is a fairly new language that is not widely adopted.
 This can mean that newcomers can have a hard time understanding how it works and get qualitative learning resources.
-It also means that the language it self is not as mature as Java or C\#.
-Another disadvantages is that Dart is a language developed by a private company, meaning if the company decides to stop the development of the language or decides to remove the language completely, we would be in trouble.
+It also means that the language itself is not as mature as Java or C\#.
+A danger is that Dart is a language developed by a private company, meaning if the company decides to stop the development of the language or decides to remove the language completely, we would be in trouble.
 
 
 The Test Generator Module was developed similarly as a compiler would be implemented.
@@ -20,9 +20,9 @@ This allows the tool to be highly extendable without requiring changes to the ac
 It means that for the module to support other frameworks or languages we only need to develop the code generator for the new framework and inject it into the module.
 Furthermore, the module has abstracted the file system, such that one can inject a file system abstraction since the module will per default deliver the generated code as files on the file system. If for some reason the consumer, by consumer we refer to the entity using the package, of the module would like the files to only live in memory they can just inject an in-memory-filesystem.
 
-The following is a code snippet of how as a consumer of the module, you compile your tests.
+On~\autoref{snippet:TestCompile} it is shown how a consumer of the module can compile their tests.
 
-\begin{lstlisting}[language=dart, caption={How to configure and use the Test Generator Package.}]
+\begin{lstlisting}[language=dart, caption={How to configure and use the Test Generator Package.}, label={snippet:TestCompile}]
   var jsonRepresentaion = '{ "id": 4, "name":"Homepage", "elements":[...]}'; //The output from the Mobile application
   
   var te = TestEngine(); // The engine it self, it can parse the json and use a codegenerator
