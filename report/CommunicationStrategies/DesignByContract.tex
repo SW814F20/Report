@@ -48,7 +48,7 @@ Another, maybe more abstract, way we can use invariants is to isolate our contra
 We can therefore, state an invariant that we assume the underlying implementation of e.g. the data management system is tested and working. 
 Therefore we need not to test the data management system. If our tests postcondition can assert that a given change to the data has happened, we can assume it is persisted in the data management system.
 
-The reason we would be interested in such an assumption is that our project is focused on acceptance tests, therefore it would be beneficial to have them consider the SUT as a black box and only consider stimuli to and from the system.
+The reason we would be interested in such an assumption is that our project is focused on acceptance tests, therefore it would be beneficial to have them consider the system under test as a black box and only consider stimuli to and from the system.
 
 We can utilize Design by Contract in our software system, as a method for the customer to express the desired functionalities of the system and compile those into executable tests to run on the implementation. 
 This will allow the developers to constantly check whether their implementation is correct and sufficient concerning the needs of the customer. 
@@ -56,6 +56,6 @@ It will also allow for easier maintenance in the future, due to the possibility 
 
 But this also raises another problem. 
 How are we going to allow the customer to formulate the contracts? 
-They are not experts in software development, so to expect them to write out the test cases and think about all the units of the SUT, would be too much to ask.
+They are not experts in software development, so to expect them to write out the test cases and think about all the units of the system under test, would be too much to ask.
 
 Therefore there is a need for a methodology for expressing these contracts such that a customer would be able to formulate them and would be able to do it in a feasible time frame.
