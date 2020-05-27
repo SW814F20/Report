@@ -15,7 +15,7 @@ So when considering mobile application development from the perspective of a cus
 The first being, which "screens" there are in the application, by screens we refer to a collection of Graphical User Interface elements all accessible in a particular state of the application, and which elements are present on said screens.
 The second thing is how do those screens and elements behave when using the application.
 
-Our proposal is a piece of software that allows the customer to set requirements for the system in a "What You See Is What You Get" (WYSIWYG) environment where the customer can create screens, or more generalized a graphical component, specify which graphical elements (such as Text, Image, Inputfield, Button, etc.) should be present on said screen. 
+Our proposal is a piece of software that allows the customer to set requirements for the system in a "What You See Is What You Get" environment where the customer can create screens, or more generalized a graphical component, specify which graphical elements (such as Text, Image, Inputfield, Button, etc.) should be present on said screen. 
 This can be translated into "When showing [name]-screen, Then I should see [list of elements]".
 The only thing missing for being a contract is the pre-condition.
 For the precondition we suggest two repositories, an actor repository where the customer can create actors for the system and an entity repository where the customer can create data-structures that they already know about within the system. 
@@ -40,7 +40,7 @@ This could then be converted into executable tests, an example in pseudo-code co
 \end{lstlisting}
 
 Finally, after a customer has specified the requirements for a screen, the screen can now act as preconditions for the more use case driven requirements. 
-An example of this could be in the WYSIWYG environment the customer can create a new use case and specify that it is a use case for the login screen, then create an event list: 
+An example of this could be in the "What You See Is What You Get" environment the customer can create a new use case and specify that it is a use case for the login screen, then create an event list: 
 \begin{enumerate}
     \item Set the Username field to empty
     \item Click login, then specify that an error should be shown to the user
