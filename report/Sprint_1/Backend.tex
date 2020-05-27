@@ -1,10 +1,8 @@
 \section{Backend}\label{sec:sprint-one-backend}
-
-Throughout this section we will describe the development done on the backend during sprint one.
+Throughout this section, we will describe the development done on the backend during sprint one.
 
 \subsection{Application Programming Interface}
-
-One of the goals of this sprint was to create the Application Programming Interface (API) where the following endpoints where implemented:
+One of the goals of this sprint was to create the Application Programming Interface (API) were the following endpoints were implemented:
 
 \begin{itemize}
     \item User
@@ -14,23 +12,19 @@ One of the goals of this sprint was to create the Application Programming Interf
 \end{itemize}
 
 Each endpoint supports as a minimum; Create, Read, Update, Delete (CRUD \cite{CRUD}).
-Futhermore some endpoint contains specialized Reads where a complete lists of, e.g. Screens and Tasks, can be returned from one call rather then multiple. 
+Furthermore, some endpoint contains specialized reads where a complete list of, e.g. Screens and Tasks, can be returned from one call, rather than multiple. 
 
-For the implementation of the API, the prioritized leverage points in~\autoref{subsec:ConclusionOfLeverage} shows which technologies to utilize.
+For the implementation of the API, the prioritized Leverage points in~\autoref{subsec:ConclusionOfLeverage} shows which technologies to utilize.
 For the API the only one of the technologies that would make sense to use is Dotnet.
-
 Dotnet is a framework developed by Microsoft using their C\# language.
 Dotnet is easy to use, in terms of development setup and production hosting and is thus a powerful tool.\cite{DotnetWebsite}
-
-The development of the API was conducted simultaneously with the development of the application it self.
-The endpoint was created as they where needed within the application.
-Allowing for the developers to work simultaneously on their issues and providing a working application along the way.
+The development of the API was conducted simultaneously with the development of the application itself.
+The endpoint was created as they were needed within the application, allowing the developers to work simultaneously on their issues and providing a working application along the way.
 
 The design of the API is based on the Model, View, Controller (MVC) pattern\cite{MVC}.
-However since the API does not provide any meaningful interface to view, that element is meaningless and is thus not implemented.
-
+However, since the API does not provide any meaningful interface to view, that element is meaningless and is thus not implemented.
 The models are all different objects the API has to deal with, such as users, apps, tasks and screens.
-Each model has it own class in the C\# language as can be seen in~\autoref{APIAppModel}.
+Each model has its own class in the C\# language as can be seen in~\autoref{APIAppModel}.
 
 \begin{lstlisting}[caption={API App model}, label={APIAppModel}, language={CSharp}]
 namespace API.Models.App
@@ -48,7 +42,7 @@ namespace API.Models.App
 Each endpoint has its own controller which is used to interface with the business logic of the API.
 An example of this can be seen in~\autoref{APIAppController}.
 This snippet shows an endpoint where if the API is called on App, then this HTTP get request, e.g. this function will be called and the answer returned.
-The function it self is rather simple, as it calls the GetAll function and maps the result to a meaningful result that is then returned.
+The function itself is rather simple, as it calls the GetAll function and maps the result to a meaningful result that is then returned.
 
 \begin{lstlisting}[caption={API App Controller GetAll Function}, label={APIAppController}, language={CSharp}]
 /// <summary>
@@ -78,27 +72,23 @@ public IEnumerable<App> GetAll()
 }
 \end{lstlisting}
 
-Similar model, services and controllers can be found for each element of the list above.
+Similar models, services and controllers can be found for each element of the list above.
 
 \subsection{Database}
-
-In~\autoref{subsec:ConclusionOfLeverage} it was concluded that PostgreSQL should be used as the datastore for this project.
+In~\autoref{subsec:ConclusionOfLeverage} it was concluded that PostgreSQL should be used as the data store for this project.
 Based on previous experience the database was setup using Docker which allows the developers to run the database locally and have the exact same environment as the production servers would run.
+On DockerHub there is an official repository from PostgreSQL which provides the docker image to run\cite{DockerHubPostgreSQL}.
 
-On DockerHub there are an official repository from PostgreSQL which provides the docker image to run\cite{DockerHubPostgreSQL}.
-
-With the use of Entity Framework in the API, the state of the database is easily maintained as migrations for the API can be added and removed as needed, meaning that the state of the database would always be functional for the API\cite{EntityFramework}.
+With the use of Entity Framework in the API, the state of the database is easily maintained as migrations for the API, which can be added and removed as needed, meaning that the state of the database would always be functional for the API\cite{EntityFramework}.
 
 \subsection{API Documentation}
-
 Since different developers are responsible for developing different part of the solution, the documentation is a key point that enables one developer to work on the work made by others.
-Since the API is developed using the dotnet framework we can use a tool called Swagger to auto generate an interactive interface containing the API documentation\cite{SwaggerIO}.
-
-On~\autoref{SwaggerDocumentation} a screenshot of the documentation can been seen.
+Since the API is developed using the dotnet framework, we can use a tool called Swagger to auto-generate an interactive interface containing the API documentation\cite{SwaggerIO}.
+On~\autoref{SwaggerDocumentation} a screenshot of the documentation can be seen.
 With this interface, the different developers can use the API at any given moment since the documentation would always be of the most recent version.
 
 \figur{1}{images/SwaggerDocumentation}{Screenshot of Swagger Documentation of the API}{SwaggerDocumentation}
 
 While most of the documentation would be auto-generated some of it needs to be written by the developer.
-In~\autoref{APIAppController} the first four lines shows the swagger documentation which is in XML format.
+In~\autoref{APIAppController} the first four lines show the swagger documentation which is in XML format.
 Since the documentation is written within the code, the developers should be more aware of the need for documentation and would thus write both more and better documentation then they otherwise would.
