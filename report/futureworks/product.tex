@@ -1,23 +1,23 @@
 \section{Product}
-Obviously the state of the product, at the time of writing, is not anywhere near industry ready, however, the product is at a stage where we can start to validate certain properties.
+The state of the product, at the time of writing, is not anywhere near industry ready, however, the product is at a stage where we can start to validate certain properties.
 
 \subsection{Usability tests}
 Therefore we suggest that Usability Tests are conducted.
 We have included one in this report in~\autoref{cha:usability} that could serve as the first test or inspiration.
 
-Whether the suggested usability test is chosen or not, it would be of most importance to conduct at least two usability tests, in order to validate the product to be an actually solution and how good it might be.
+Whether the suggested usability test is chosen or not, it would be of most importance to conduct at least two usability tests, to validate the product to be an actual solution and how good it might be.
 The first would be a usability test concerned with the customers and the use of the tablet application.
-To determine whether it is at all usable for them and if it actually helps them.
-Since we did not have the opportunity to test and validate some of the design choices in the application, there is certain to be issues for the real users, which is important to locate these flaws in the design.
+To determine whether it is at all usable for them and if it helps them.
+Since we did not have the opportunity to test and validate some of the design choices in the application, there is certain to be issued for the real users, which is important to locate these flaws in the design.
 We have designed the application from our context and needs, which needs to be validated against real customers' context and needs.
 
 The second usability test should be concerned with the developers.
 This test should help answer questions such as; do the generated test add value to their work process? 
 Do they feel the product eliminates the time spent waiting on customer approval?
-Does it help them build what the customer actually wants? (meaning prevent over-development or under-development)
-How do they like the process of implementing the generated test artifacts, do they feel in control of the test or do they feel enslaved by them?
+Does it help them build what the customer wants? (meaning prevent over-development or under-development)
+How do they like the process of implementing the generated test artefacts, do they feel in control of the test or do they feel enslaved by them?
 
-In order to truly validate that our product actually is capable of solving the problems, it is of most importance to have conducted at least the two types of usability tests mentioned above.
+To truly validate that our product is capable of solving the problems, it is of most importance to have conducted at least the two types of usability tests mentioned above.
 We suggest this is done before any considerations regarding adding more features to the product, to ensure the relevance of the product.
 
 \subsection{Make the Product Industry Ready}
@@ -32,7 +32,7 @@ We suggest that an entity repository is implemented such that the customer can c
 The customer should then be able, in the UI-component of which the task belongs to, select a UI-element and specify that a particular data point should belong to that UI-element.
 An example of this could be a Text-element should show the data point Title from the Book entity.
 Doing so would allow the tests to have pre-conditions such as "Given a Book with Title 'Harry Potter', When going to book details, Then 'Harry Potter' should be present in the Header-element".
-Without this ability, the test can actually only test the presence of a UI-element, but not the value.
+Without this ability, the test can only test the presence of a UI-element, but not the value.
 
 We suggest that an actor repository is implemented.
 This repository should allow the customer to name different actors.
@@ -48,15 +48,15 @@ If one were to expand the functionality of the product, we believe that an obvio
 We suggest that when creating a task in the application it should be possible for the customer to specify interactions such as "When the login field is left empty, Then I should see an error message saying 'invalid credentials'" this should then be translated into executable tests. 
 If such expansion where to be considered we would encourage to also consider interaction such as dragging, clicking, authorization, scrolling, etc.
 If it were possible, in the tablet application, to create specifications that take all these interactions into account and then automatically can generate tests, we believe that the product would be very beneficial for both the customers and the developers.
-Since it would now be possible to specify many of the most common behaviors of a Graphical User Interface.
+Since it would now be possible to specify many of the most common behaviours of a Graphical User Interface.
 
 Another expansion would be to allow the tablet application to run the tests on the current development branch in the version control software connected to the project.
 This would allow the customer to get a lot of insight into the progress of the system under development as a whole or the progress of a single task.
-Whether this expansion is possible or not we are not sure at the time of writing, but we imagine that it would require some sort of continuous integration service in order to do.
+Whether this expansion is possible or not we are not sure at the time of writing, but we imagine that it would require some sort of continuous integration service to do.
 
 We also suggest a module that would allow the customer to open or view the system under development in the tablet application, as a means of light continuous delivery to the customer.
-In the context of mobile and tablet applications this could maybe be to download the actual compiled system in its current state and run it on the device. 
+In the context of mobile and tablet applications, this could maybe be to download the actual compiled system in its current state and run it on the device. 
 Whether this is a technical possibility is unknown to us, but it would be beneficial.
 Another approach to providing a light continuous delivery would be if the tests that are concerning with interaction were to run on the actual compiled system, i.e. black-box testing, maybe the execution could be automatically screen recorded and uploaded to the customer application.
 This approach is something that other testing tools have implemented already, tools such as Cypress for end-to-end testing of websites.
-In Cypress, they record the tests run since it actually spins up a browser and visits the website, the video shows how the site looks and functions doing the test cases.
+In Cypress, they record the tests run since it spins up a browser and visits the website, the video shows how the site looks and functions doing the test cases.
