@@ -1,31 +1,35 @@
-\section{Combining the parts}\label{sec:combiningtheparts}
-Now that we have looked at a couple of methods that have been inspirational for us, we will introduce how we believe requirements can be communicated and structured, such that they can automatically be translated into executable tests and allow the customer to formulate them with ease and without misunderstandings.
+\section{Combining the Parts}\label{sec:combiningtheparts}
+We have looked at a couple of methods that have been inspirational for us, we will introduce how we believe requirements can be communicated and structured, such that they can automatically be translated into executable tests and allow the customer to formulate them with ease and without misunderstandings.
 
 The first part is Design by Contract.
-We believe that when specifying requirements for a system, they should be formulated as a contract, i.e. precondition, computation, postcondition. 
+We believe that when specifying requirements for a system, they should be formulated as a contract, i.e. precondition, computation, and postcondition. 
 Since this allows the customer to think in a bigger context and more abstract level, than if we only focus on the raw computation.
-It also gives extra valuable information to the developers, and it allows for converting the requirement into executable tests, see~\autoref{sec:DbC} for the relationship between contracts and Hoare Logic.
+It also gives valuable information to the developers, and it allows for converting the requirement into executable tests, see~\autoref{sec:DbC} for the relationship between contracts and Hoare Logic.
 
-The second part is how we imagine the customer to create these contracts, however, first, we need to specify a bit of context.
+The second part is how we imagine the customer to create these contracts.
+Firstly we need to specify a bit of context.
 Our focus in this project is from the perspective of the customer, the people paying for the system under development.
 We have also chosen to focus on requirements for mobile application development, more specific we have chosen to only focus on development that uses the framework \textbf{Flutter}.
 The reason for this focus is that it narrows the technical aspects to something manageable.
-So when considering mobile application development from the perspective of a customer, we believe that there are two key aspects that are of interest to the customer.
-The first being, which "screens" are there in the app, by screens we refer to a collection of Graphical User Interaction (GUI) Elements all accessible in a particular state of the application, and which GUI elements are present on said screens.
-The second thing is how do those screens and GUI elements behave when using the application.
+So when considering mobile application development from the perspective of a customer, we believe that two key aspects are of interest to the customer.
+The first being, which "screens" there are in the application, by screens we refer to a collection of Graphical User Interface elements all accessible in a particular state of the application, and which elements are present on said screens.
+The second thing is how do those screens and elements behave when using the application.
 
-Our proposal is a piece of software that allows the customer to set requirements for the system in a "What You See Is What You Get" (WYSIWYG) environment where the customer can create screens, or more generalized a GUI-component, specify which GUI elements (such as Text, Image, Inputfield, Button, etc.) should be present on said screen. 
+Our proposal is a piece of software that allows the customer to set requirements for the system in a "What You See Is What You Get" environment where the customer can create screens, or more generalized a graphical component, specify which graphical elements (such as Text, Image, Inputfield, Button, etc.) should be present on said screen. 
 This can be translated into "When showing [name]-screen, Then I should see [list of elements]".
-The only thing missing for being a contract is the pre-condition. For the precondition we suggest two repositories, an actor repository where the customer can create actors for the system and an entity repository where the customer can create data-structures that they already know about without the system. 
-To illustrate what a data structure that customer already knows about could be a library. 
-Let us say that we are developing a system for a library.
-The customer then already knows that they have books and that a book has a title, an author, etc. All these data points are well known for the customer in their context. 
-So the customer can go into the Entity repository, create an entity called "Book" and specify that a book has a title, an author, etc. 
-However, the customer cannot specify technical details such as what data type is the title. When creating a screen, the customer could then specify given a book with the title "Harry Potter" and as a citizen, when I go to the book-detail-screen, I should see a Text element with the data "Harry Potter". This can then be translated into "Given a Book{title: "Harry Potter"} and as a Citizen, When I go to book-details-screen, I should see Harry Potter". This could then be converted into executable tests, an example in pseudo-code could look like:
+The only thing missing for being a contract is the pre-condition.
+For the precondition we suggest two repositories, an actor repository where the customer can create actors for the system and an entity repository where the customer can create data-structures that they already know about within the system. 
+To illustrate what a data structure that the customer already knows about, could be in the context of a library system.
+The customer then already knows that they have books and that a book has a title, an author, etc. 
+All of these data points are well known for the customer in their context. 
+However, the customer cannot specify technical details such as what data type is the title.
+When creating a screen, the customer could then specify given a book with the title "Harry Potter" and as a citizen, when I go to the book-detail-screen, I should see a Text element with the data "Harry Potter". 
+This can then be translated into "Given a Book{title: "Harry Potter"} and as a Citizen, When I go to book-details-screen, I should see Harry Potter".
+This could then be converted into executable tests, an example in pseudo-code could look like:
 
 \begin{lstlisting}
     void test_detail_screen(TestHelper Helper){
-        int BookId = Helper->factory->book(title: "Harry Potter")->create();
+        Let BookId = Helper->factory->book(title: "Harry Potter")->create();
 
         Helper->ActAs("Citizen");
 
@@ -35,7 +39,11 @@ However, the customer cannot specify technical details such as what data type is
     }
 \end{lstlisting}
 
-
 Finally, after a customer has specified the requirements for a screen, the screen can now act as preconditions for the more use case driven requirements. 
-An example of this could be in the WYSIWYG environment the customer can create a new use case and specify that it is a use case for the login screen, then create an event list like: 
-1) set the Username field to empty 2) click login, and then specify that an error should be shown to the user. This will also be translated into Hoare Logic, which then can be translated into executable tests.
+An example of this could be in the "What You See Is What You Get" environment the customer can create a new use case and specify that it is a use case for the login screen, then create an event list: 
+\begin{enumerate}
+    \item Set the Username field to empty
+    \item Click login, then specify that an error should be shown to the user
+\end{enumerate}
+
+This can be translated into Hoare Logic, which then can be translated into executable tests.
