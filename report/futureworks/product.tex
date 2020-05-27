@@ -1,16 +1,16 @@
 \section{Product}
-Obviously the state of the product, at the time of writing, is not anywhere near industry-ready.
-Although the product is at a stage where we can start to validate certain properties.
+Obviously the state of the product, at the time of writing, is not anywhere near industry ready, however, the product is at a stage where we can start to validate certain properties.
 
+\subsection{Usability tests}
 Therefore we suggest that Usability Tests are conducted.
 We have included one in this report in~\autoref{cha:usability} that could serve as the first test or inspiration.
 
-\subsection{Usability tests}
 Whether the suggested usability test is chosen or not, it would be of most importance to conduct at least two usability tests, in order to validate the product to be an actually solution and how good it might be.
 The first would be a usability test concerned with the customers and the use of the tablet application.
 To determine whether it is at all usable for them and if it actually helps them.
 Since we did not have the opportunity to test and validate some of the design choices in the application, there is certain to be issues for the real users, which is important to locate these flaws in the design.
 We have designed the application from our context and needs, which needs to be validated against real customers' context and needs.
+
 The second usability test should be concerned with the developers.
 This test should help answer questions such as; do the generated test add value to their work process? 
 Do they feel the product eliminates the time spent waiting on customer approval?
@@ -20,7 +20,7 @@ How do they like the process of implementing the generated test artifacts, do th
 In order to truly validate that our product actually is capable of solving the problems, it is of most importance to have conducted at least the two types of usability tests mentioned above.
 We suggest this is done before any considerations regarding adding more features to the product, to ensure the relevance of the product.
 
-\subsection{Make the Product Industri-Ready}
+\subsection{Make the Product Industry Ready}
 When it comes to features of the product it is, at the time of writing, quite sparse.
 The reason for which is a deliberate choice by this project group (see~\autoref{cha:mvp}), since it at this point contains all the features we find necessary to conduct the usability tests.
 But with that said, we believe that the current feature set leaves the product non-usable for the industry.
@@ -32,20 +32,19 @@ We suggest that an entity repository is implemented such that the customer can c
 The customer should then be able, in the UI-component of which the task belongs to, select a UI-element and specify that a particular data point should belong to that UI-element.
 An example of this could be a Text-element should show the data point Title from the Book entity.
 Doing so would allow the tests to have pre-conditions such as "Given a Book with Title 'Harry Potter', When going to book details, Then 'Harry Potter' should be present in the Header-element".
-Without this ability the test can actually only test the presence of a UI-element but not the value.
+Without this ability, the test can actually only test the presence of a UI-element, but not the value.
 
-We also suggest that an actor repository is implemented.
+We suggest that an actor repository is implemented.
 This repository should allow the customer to name different actors.
 This will allow the customer to specify which actor is performing a particular task.
 This can be used for making tests concerned with authentication, by creating a test for each specified actor and perform the task as a said actor, and then also create a test for each actor not specified (including no actor) and assert the task is not legal.
 This can be considered the invariant of the Design by Contract.
 
 With the two repositories implemented as suggested, we believe that the product would be usable for the industry to start and adopt.
-Although there are still a couple of features that we would like to suggest.
-These features are more concerned with expanding the product's capabilities.
+Although there are still a couple of features that we would like to suggest, these features are more concerned with expanding the product's capabilities.
 
 \subsection{Expandability suggestions}
-If one were to expand the functionality of the product we believe that an obvious expansion would be to support interaction specifications and be able to generate tests for interaction.
+If one were to expand the functionality of the product, we believe that an obvious expansion would be to support interaction specifications and be able to generate tests for interaction.
 We suggest that when creating a task in the application it should be possible for the customer to specify interactions such as "When the login field is left empty, Then I should see an error message saying 'invalid credentials'" this should then be translated into executable tests. 
 If such expansion where to be considered we would encourage to also consider interaction such as dragging, clicking, authorization, scrolling, etc.
 If it were possible, in the tablet application, to create specifications that take all these interactions into account and then automatically can generate tests, we believe that the product would be very beneficial for both the customers and the developers.
@@ -58,7 +57,6 @@ Whether this expansion is possible or not we are not sure at the time of writing
 We also suggest a module that would allow the customer to open or view the system under development in the tablet application, as a means of light continuous delivery to the customer.
 In the context of mobile and tablet applications this could maybe be to download the actual compiled system in its current state and run it on the device. 
 Whether this is a technical possibility is unknown to us, but it would be beneficial.
-
 Another approach to providing a light continuous delivery would be if the tests that are concerning with interaction were to run on the actual compiled system, i.e. black-box testing, maybe the execution could be automatically screen recorded and uploaded to the customer application.
 This approach is something that other testing tools have implemented already, tools such as Cypress for end-to-end testing of websites.
 In Cypress, they record the tests run since it actually spins up a browser and visits the website, the video shows how the site looks and functions doing the test cases.
