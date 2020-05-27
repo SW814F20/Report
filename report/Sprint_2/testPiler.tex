@@ -3,30 +3,29 @@ In this sprint, we began the implementation of our Test Generator module.
 We choose to develop the module as a plain Dart package. 
 The reason for this is that as a Dart package the module can be imported into many different projects.
 Thereby allowing the Test Generator to be used in another context than in Flutter in the future.
-The reason we choose to build it in Dart language is that it is the same language that Flutter uses, but also that the language allows compilation to many targets.
+Another reason is that it is the same language that Flutter uses, but also that the language allows compilation to many targets.
 It can be compiled as a stand-alone program for any x86 machine, or it can be transpiled into Javascript, or as is the case with Flutter, it can be compiled to run on Mobile devices. 
 So choosing Dart gives us a lot of flexibility in the future if needed.
-The disadvantages with using dart is that it is a fairly new language that is not widely adopted.
 
-This can mean that newcomers can have a hard time understanding how it works and get qualitive learning resources.
+The disadvantages of using Dart are that it is a fairly new language that is not widely adopted.
+This can mean that newcomers can have a hard time understanding how it works and get qualitative learning resources.
 It also means that the language itself is not as mature as Java or C\#.
-While the Dart Language is open source, and we see this as a strength, it also comes with some draw backs. 
-Due to the inmatureness of Dart there has been situation where Linux users were unable to compile Dart code, due to a change in the Linux Kernel. 
-Since Dart is Open Source and thereby there is no company behind with the incentiment to fix such issues, it took the community of Dart over a month to fix it.
-
+While the Dart Language is open source, and we see this as a strength, it also comes with some drawbacks. 
+Due to the immatureness of Dart, there has been a situation where Linux users were unable to compile Dart code, due to a change in the Linux Kernel. 
+Since Dart is Open Source and thereby there is no company behind it, which means that there is no regular team to fix such problems, it took the community of Dart over a month to fix it.
 
 The Test Generator Module was developed similarly as a compiler would be implemented.
 It takes in the JSON representation of a screen and then uses a visitor pattern to generate the tokens representing the JSON structure.
 These tokens are then sent to a code generator that once again uses a visitor pattern to generate the correct code.
-The module is architectured in such a way that it can have many code generators, and the user of the module can even inject third-party code generators.
+The module is architecture in such a way that it can have many code generators, and the user of the module can even inject third-party code generators.
 This allows the tool to be highly extendable without requiring changes to the actual module itself.
-It means that for the module to support other frameworks or languages we only need to develop the code generator for the new framework and inject it into the module.
+It means that for the module to support other frameworks or languages, we only need to develop the code generator for the new framework and inject it into the module.
 Furthermore, the module has abstracted the file system, such that one can inject a file system abstraction since the module will per default deliver the generated code as files on the file system. If for some reason the consumer, by consumer we refer to the entity using the package, of the module would like the files to only live in memory they can just inject an in-memory-filesystem.
 
 On~\autoref{snippet:TestCompile} it is shown how a consumer of the module can compile their tests.
 
 \begin{lstlisting}[language=dart, caption={How to configure and use the Test Generator Package.}, label={snippet:TestCompile}]
-  var jsonRepresentaion = '{ "id": 4, "name":"Homepage", "elements":[...]}'; //The output from the Mobile application
+  var jsonRepresentaion = '{ "id": 4, "name":"Homepage", "elements":[...]}'; //The output from the tablet application
   
   var te = TestEngine(); // The engine it self, it can parse the json and use a codegenerator
   var fs = LocalFileSystem(); // The abstraction layer for file system
@@ -48,7 +47,7 @@ The output of this is an entire Test Suite for Flutter since the snippet uses th
 To run the test suite, add the files to the project and implement an abstract class created by the test engine. 
 The reason for having this abstract class is that there are details our test engine cannot know about the system under development.
 For example, what is the Homepage inside the codebase?
-Therefore every time there is a need for information that is outside the knowledge base of the test engine, the developers need to create a method in said abstract class that is meant for the developers to implement. 
+Therefore every time there is a need for information that is outside the knowledge base of the test engine, the developers need to create a method in said abstract class. 
 After implementing the test suite, it uses these functions to correctly test the system.
 Below is a code snippet of how to integrate the test suite in a Flutter code base.
 
