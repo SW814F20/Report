@@ -1,7 +1,7 @@
 # Raport build
 variables:
   projectDirectory: .
-pool: dockerpool
+pool: flutter
 jobs:
   - job: PDFLatex
     steps:

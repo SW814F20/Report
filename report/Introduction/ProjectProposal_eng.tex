@@ -1,0 +1,62 @@
+\section{Purpose}
+In agile processes there is a great focus on that requirements is not something that you just make, but something that you discover and improve throughout the project.
+To accommodate this method, there are different processes, with different ways to accomplish it. 
+In Scrum, the final decision comes from the "Product Owner".
+The "Product Owner" is a person that represents the customer, either by being the actual customer, or someone with knowledge (domain expert) and authority to make decisions on behalf of the customer. 
+Extreme Programming (XP) has something similar but called "Onsite Customer".
+This means that the customer must be present in the same room as the developers and be available to answer questions and provide feedback on the quality of the product during the development process. 
+\\\\
+A common problem with both methods is that they require the customer to leave their normal environment and be where the developers are. 
+This means that the customer or domain expert will have to recall the problem domain, and not be present in it.
+Many of the details regarding the problem domain often come as tacit knowledge, which can make it hard to recall the details while they are not in their problem domain. 
+
+The optimal scenario would be if the customer or domain expert could fulfil their role as Product Owner, while he or she was within the proper domain. 
+This would increase the quality of feedback and ensure that the requirements are more "on point".
+It is also a well-known problem that customers are terrible at saying what they want, but it is very easy for them to say what they do not want.
+A phenomenon which Morten Hartvigsen has experienced through his five years as a graphical designer.
+In the world of design, to accommodate this problem you often present the customer with three proposals for designs and ask the customer to point out what they like and more importantly what they do not like.
+This gives the designer some insight into what the customer wants and likes. 
+
+
+With these two problems concerning the inclusion of the customer in the development process, it would be exciting to look at which technologies could be used, that could allow the customer to express their needs while being in their problem domain while still being able to communicate with the developers. 
+
+\section{Execution}
+We would like to create a mobile application that will allow the customer to express their needs in an intuitive and precise manner, while at the same time would allow the requirements to be translated to a set of "acceptance tests" allowing the developers to verify that they have fulfilled the requirements of the customer.
+This tool will also allow the developers to propose alternative solutions, not in the form of software implementations, but within the same environment as the customer. 
+This will allow the customer to look at the different problem solutions whenever they like to, and all in the same environment that the customer uses to express their requirements. 
+
+
+The intention is to develop a platform that will use "Finite State Automata" to express needs, requirements and wishes to a product, in a way that is useful for people without formal knowledge of these. 
+Using Finite State Automata will allow for algorithms to highlight errors or oversights in the specified requirements.
+Furthermore, the use of Finite State Automata will also make it possible to know every state of an application, and this means that it is possible to give guarantees that applications will not end in an unwanted state. 
+Lastly, this would allow the developers, with far greater knowledge about Finite State Automata, to communicate alternative solutions in a way that is transparent and understandable to the customer. 
+
+These State Automata will then be translated into acceptance tests through automatic code generation.
+This will allow the developer greater confidence in developing a product that fulfils the customers' wishes, while also making it easier to get the development right the first time.
+
+
+We would like during the project to experiment, with the proposed solution to test if the product could solve some of the problems.
+To do so we would like to select some of the groups from the Giraf project at Aalborg University.
+The Giraf Project is a project, that is a Bachelor project for 6. Semester students of Software Engineering at Aalborg University. 
+Within the Giraf project, we would act as a communication medium between the development teams (groups) and the Product Owner.
+As a communication medium, we will start by creating paper prototypes of our idea, and see how communication and understanding will be affected by both customers (Product Owners) and developers (groups).
+After this, we would have to manually rewrite the paper prototype to acceptance tests in the project and see how it would be to having automatic "Definition of Done" affects developers ability to fulfil the requirements
+By using a subset of the groups from Giraf, we have control groups that we can compare to our groups, in regards to metrics such as throughput of "Story Points", quality of code, and the number of bugs discovered before release.
+We would also like to evaluate the amount of time each group use to solve an "issue" compared to the amount of Story Points assigned to the issue.
+
+
+\section{Expected Contributions from the Project}
+\begin{itemize}
+    \item How can you create an intuitive graphical user interface to make Finite State Automata's?
+    \item How can the properties of a Finite State Automata help the customer make inquiries and innovation on requirements that might not be complete?
+    \item How can automatic acceptance tests and precisely defined requirements help developers deliver high quality within a reasonable time period?
+\end{itemize}
+
+\section{Modifications}
+Due to the Covid-19 pandemic, the project proposal we would have liked to work with was not an option.
+Everything that required us to work with the Giraf project groups went down the drain when Aalborg University sent all students home to isolate.
+This also meant that usability testing our product on the groups no longer was an option. 
+However, we believe that our product proposal is still valid, and due to the pandemic , our product will allow developers and "Product Owner" to be isolated.
+This means that even though we can no longer test our product in a suited environment, we still believe that the product will have a huge potential to provide a solution, that could allow people to continue to being productive during isolation.
+Instead of focusing on the mathematics of Finite State Automata, the focus will be on project management and communication.
+Therefore we believe that a solution which we propose is more needed than before the Covid-19 pandemic because this might not be the only one.

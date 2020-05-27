@@ -1,0 +1,152 @@
+\section{Review of the Sprint}\label{sec:review-sprint-two}
+To conclude this sprint, we need to review our progress.
+We will follow the same process, which can be seen in~\autoref{sec:review-sprint-anne}.
+
+The first goal we had was to develop on the screen functionalities.
+We have made some progress, however, we have not made a functional screen editor, so this goal is not fulfilled.
+We began working on the Test Generator, and in its current state, it works as intended, however, it is missing some advanced functionalities.
+The last thing we wanted to focus on was to research the GitHub API so we can work on it in the next sprint.
+This is accomplished as we have a good understanding of how to use it and what API calls we need to use.
+
+In terms of our configuration table, we still believe we are on track, however, after some feedback we have concluded that some of the criteria are not good enough, meaning that we need to have some specific criteria and not just overall criteria as we have now.
+Therefore we have revised the configuration table, and have made the following changes:
+
+\begin{itemize}
+    \item Changed customer to Product Owner, to reflect who is going to use the product.
+    \item Changed \textbf{communicate} to \textbf{communication of expectation}, to reflect what we mean by communication.
+    \item Added more text to Leverage, to reflect why we have used the different leverage points.
+    \item Architecture
+        \begin{itemize}
+            \item We have added a new module, namely the translator module, to generate tests
+        \end{itemize}
+    \item Elements \& Ecology
+        \begin{itemize}
+            \item After feedback, we have a better understanding of what elements we have in our problem domain
+        \end{itemize}
+    \item Criteria for Architecture Expectations
+        \begin{itemize}
+            \item Added specific criteria and removed findings
+        \end{itemize} 
+    \item Tactics
+        \begin{itemize}
+            \item Added numbers to reflect which features are to what scenarios
+            \item Added numbers to value propositions.
+        \end{itemize} 
+\end{itemize}
+
+The revised configuration table can be seen in~\autoref{tab:charlotte-configuration-table}.
+
+\begin{landscape}
+    \begin{table}[]
+        \tiny
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    View & \multicolumn{1}{c|} {Paradigm} & \multicolumn{1}{c|} {Product} & \multicolumn{1}{c|}{Project} & Process \\ \hline
+    Value & \multicolumn{1}{c|}{Reflection} & \multicolumn{1}{c|}{Transaction} & \multicolumn{1}{c|}{Reasoning} & Appreciation \\ \hline
+    Rationale & \begin{tabular}[c]{@{}l@{}}Problematic:\\ \\ Challenge: Improve the communication\\ of expectation between Product Owner\\ and developers in an\\ Agile Software Development Process.\\ \\ Problem: The communication of \\expectation between Product Owner\\ and developers are one of the\\ most challenging aspects \\of the development process. 
+    \end{tabular} & \begin{tabular}[c]{@{}l@{}}Leverage:\\
+        \begin{minipage} [t] {0.35\textwidth} 
+            \begin{itemize}
+            \item \textbf{Docker} for uniform and atomic hosting across platforms
+            \item \textbf{Flutter} for easier android and iOS 
+            \item \textbf{DotNet} for a well built, well test framework to build applications upon
+            \item \textbf{Entity Framework} open source tested framework to interact with multiple database types and services
+            \item \textbf{PostgreSQL} highly stable high-performance open source database system
+           \end{itemize} 
+          \end{minipage} 
+    \end{tabular} & \begin{tabular}[c]{@{}l@{}}Resolution:\\ \textbf{Prospect}: The communication of\\ expectations between developers\\ and Product Owner will\\ become systematic and become an \\integrated part of regular communication.
+     \\ \textbf{Warrant}: Because software \\ development is expensive, \\ and could reduce the \\ cost and increase the quality\\ \\ Backing: Inexpensive, \\ popular platform. Extensible\end{tabular} 
+            & \begin{tabular}[c]{@{}l@{}}Criteria for resolution expectations:\\ 
+                \begin{minipage} [t] {0.3\textwidth} 
+                    \begin{itemize}
+                    \item Is the problem still worth solving
+                    \item Does the proposed solution solve the problem
+                    \item Have we used the correct leverage points
+                   \end{itemize} 
+                  \end{minipage}    
+                \\ \\ Findings:\\
+                \begin{minipage} [t] {0.3\textwidth} 
+                    \begin{itemize}
+                    \item \textit{Possible need an adapter between formalized requirements and system under development}
+                   \end{itemize} 
+                  \end{minipage}   
+            \end{tabular} \\ \hline
+    Strategy  & \begin{tabular}[c]{@{}l@{}}Elements \& Ecology:\\ 
+        \begin{minipage} [t] {0.335\textwidth} 
+            \begin{itemize}
+                \item Platform tied with the communication of expectations between developers and Product Owner
+                \item User-supplied stories
+                \item Acceptance criteria
+                \item Developers
+                \item Product Owner
+           \end{itemize} 
+          \end{minipage} 
+    \end{tabular} & \begin{tabular}[c]{@{}l@{}}Architecture:\\ 
+        \begin{minipage} [t] {0.335\textwidth} 
+            \begin{itemize}
+            \item Digital app editor module
+            \item Digital issue tracking module
+            \item Digital communication module
+            \item Translator module
+           \end{itemize} 
+          \end{minipage}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Qualification:\\ \\ Qualifier: Requires understanding of the\\ formalized methodology of requirements \\ \\ Rebuttal: The app provides an \\intuitive structured interface for\\ using the methodology,\\ so learning should be easy.\end{tabular} 
+            & \begin{tabular}[c]{@{}l@{}}Criteria for architecture expectations: \\
+            \begin{minipage} [t] {0.335\textwidth} 
+                \begin{itemize}
+                    \item Is the architecture maintainable and expandable?
+                    \item Is the architecture modularized to support future expansions?
+                    \item Does the issue tracking module, support the functionalities that the Product Owner needs and wants?
+                    \item Does the editor enables the Product Owner to unfold what they want in terms of functionalities in a given screen?
+               \end{itemize} 
+              \end{minipage} \\
+\end{tabular} \\ \hline
+    Tactics & \begin{tabular}[c]{@{}l@{}}Scenarios:\\ 
+        \begin{minipage} [t] {0.35\textwidth} 
+            \begin{enumerate}
+                \item Product Owner used the system to create an interaction requirement
+                \item Product Owner used the system to create expected behaviours of interactions
+                \item Developers can take tasks and fulfil the requirements set by the Product Owner
+                \item The Product Owner can at any time see how a task is proceeding and see the progress and interact with developers
+            \end{enumerate}
+          \end{minipage} 
+         \end{tabular} & \begin{tabular}[c]{@{}l@{}}Features:\\
+            \begin{minipage} [t] {0.4\textwidth} 
+                \begin{enumerate}
+                    \item App editor where the Product Owner can make their interaction requirements thereby creating an interaction model(S1)
+                    \item App editor where Product Owner can formalize expected behaviour requirements for an interaction model(S2)
+                    \item The app editor can suggest behaviour requirements for specific interaction elements(S1, S2)
+                    \item Translate App editor to developer requirements(S3)
+                    \item Product owner can see the current status of all issues in the given project(S4)
+               \end{enumerate} 
+              \end{minipage} 
+    \end{tabular} & \begin{tabular}[c]{@{}l@{}}Value Propositions:\\
+        \begin{minipage} [t] {0.35\textwidth} 
+            \begin{enumerate}
+                \item Translate Product Owner requirements to product requirements(F4)
+                \item Help Product Owner to specify edge-case behaviours they may not realize naturally(F3)
+                \item Levitate overhead for the Product Owner in how to explain requirements(F1, F2, F3)
+                \item Supply a unified framework for the developers for understanding requirements(F1, F2, F4)
+                \item Creates compliance between Product Owner and developers(F1, F2, F4, F5)
+           \end{enumerate} 
+          \end{minipage} 
+         \end{tabular} & 
+    \begin{tabular}[c]{@{}l@{}}Criteria for value Propositions \\ expectations: \\
+        \begin{minipage} [t] {0.3\textwidth} 
+            \begin{itemize}
+            \item Is the translation effective (VP1)
+            \item Does the app gives edge-cases behaviours to the Product Owner (VP2)
+            \item Does the app makes it easier to explain and communicate requirements(VP3, VP4, VP5)
+           \end{itemize} 
+          \end{minipage} 
+         \\ \\ Findings: \\
+         \begin{minipage} [t] {0.3\textwidth} 
+            \begin{itemize}
+                \item \textit{Help the Product Owner and developers to get started (In-app tutorial)}
+           \end{itemize} 
+          \end{minipage}  
+        \end{tabular} \\ \hline
+    \end{tabular}
+    \caption{Configuration table, named Charlotte.}
+    \label{tab:charlotte-configuration-table}
+    \end{table}
+\end{landscape}

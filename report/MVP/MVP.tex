@@ -1,0 +1,58 @@
+This chapter will elaborate on our Minimum Viable Product (MVP), and we will in the following chapters go though how we have developed this MVP.
+
+According to Eric Ries, an MVP is defined as 
+\begin{quote}
+    "The minimum viable product is that version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort" \cite{whatIsMVP}.
+\end{quote}
+
+\section{What is our MVP?}
+As we have limited time in this project, to create a product, we will focus on creating a MVP.
+This MVP will serve more as a proof-of-concept, and will also be a learning experience for us, rather than a product that the industry can use.
+The reason for this is that our MVP will not have all of the advanced features, for it to be industry-ready, which is why it is more of a proof-of-concept.
+
+With that being said, we still believe that our MVP will give value to both Product Owners (PO) and developers.
+It will give value to the PO, as they can formalise their requirements in their domain, and can follow the development progress at any time, without disturbing the developers.
+The value for the developers is that they will have automatically generated tests, they can run, to see if their solution fulfils the requirements set by the PO. 
+
+The purpose of this MVP is to give the PO an idea of how to formalise their requirements, in a mobile application, meaning that they can use it anytime they want, and anywhere, as long as they have a connection to the internet.
+Furthermore, it will also give the developers an idea of how the workflow will be, and how they can get instant feedback, regarding if the requirements are fulfilled. 
+
+This MVP will only focus on the User Interface elements, meaning that we will not make any implementations in regards to the class invariant, which is proposed in~\autoref{sec:DbC}.
+The reason why, is that we see more value gathered from the workflow of the application, where the PO can create and edit screens.
+Furthermore, it will not give us much value in terms of the learning experience, as this is somewhat trivial to do, whereas the critical features, that are more complex will give us more learning experience, in our opinion.
+The reason why we believe that this is trivial is that checking if a given element is still on the screen, is straightforward to do in Flutter.
+
+Below is a list of the critical features we need in the MVP.
+The reason why these are critical features is that we need them to give value to both PO's and developers.
+If we do not have these features, the MVP will not give any value.
+Furthermore, these features are those that give us, the project group, most learning experience, as we try to find out if it is possible to create a GUI, which will help a PO to communicate their requirements to developers, in an environment where the PO, does not need to leave their domain, and where they can see the progress at any time, while the developers can get instant feedback.
+
+\begin{itemize}
+    \item PO should be able to create and priorities tasks and screens in the application
+    \item PO should be able to edit a screen
+    \item Developers should be able to run the automated tests
+\end{itemize}
+
+The less important features we have, which are somewhat trivial to make.
+They are ranked according to their importance:
+
+\begin{enumerate}
+    \item PO can edit screens
+    \item PO can see the status of each task, via a Kanban board in the application
+    \item PO can create a new application, resulting in a new GitHub repository
+    \item Accessing the system requires authentication
+    \item PO can read comments from developers regarding tasks
+\end{enumerate}
+
+Looking at the MVP, we had to make some decisions, in terms of which features we must have in our MVP, the ones that should be in the MVP, and which features we will not prioritise to implement.
+The features we have chosen not to priorities in the MVP, but are features that should be considered if this project could be expanded and improved are:
+
+\begin{itemize}
+    \item PO should be able to create entities, such as a user object
+    \item PO should be able to create a class invariant in the system
+    \item PO should be able to create behaviour conditions, such as "this text input field, cannot be empty"
+    \item Be able to specify the flow of the UI components through specific actions, such as a press on a button
+    \item PO should be able to comment on tasks
+\end{itemize}
+
+In the next couple of sprints, we will have two projects in one, meaning that we will use the time to figure out how we should make the testing module, and the other project, will be how we should create the mobile application itself.

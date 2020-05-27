@@ -1,0 +1,65 @@
+\section{Design by Contract}\label{sec:DbC}
+
+Design by Contract is a method that tries to ensure at least two very important aspects of a system, one is reliability and the other is reusable code~\cite{Bertrand_DbC}.
+By reliability, we refer to properties such as correctness and robustness, or in simpler terms the absence of bugs~\cite{Bertrand_DbC}.
+The method is inspired by how a "human" contract, i.e. a business contract, works.
+In the paper "Applying 'Design by Contract'" by Bertrand Meyer 1992, Meyer identifies two major properties of human contracts~\cite{Bertrand_DbC}:
+\begin{itemize}
+    \item Each party expects some benefits from the contract and is prepared to incur some obligations to obtain them.
+    \item These benefits and obligations are documented in a contract document.
+\end{itemize}
+
+Meyer also identifies two benefits of having a contract document, which is~\cite{Bertrand_DbC}:
+\begin{itemize}
+    \item It protects the client by specifying how much should be done: The client is entitled to receive a certain result.
+    \item It protects the contractor by specifying how little is acceptable: The contractor must not be liable for failing to carry out tasks of the specified scope
+\end{itemize}
+
+Another finding Meyer highlights is, "what is an obligation for one party is usually a benefit for the other"~\cite{Bertrand_DbC}.
+
+A contract can be considered in terms of three elements; the precondition which is what needs to exist before the task of the contract can be fulfilled (such as a package for the postman to deliver.), the task for which the contract is concerned about (i.e. deliver the package on behalf of the customer), and finally, the postcondition which is what is expected to be true after the completion of the task (i.e. the package is delivered to the correct person, the package was delivered on time, etc.).
+
+Considering a contract in these three phases can help translate the concept of a human contract into a concept of a contract within a software system.
+In the paper by Meyers, he considers a sub-routine where all the preconditions are asserted at the beginning of the sub-routine.
+If one or more are not successfully asserted, the sub-routine will throw an error and terminate. 
+If all the preconditions are asserted successfully the sub-routine will do its computation and in the end, it will assert the postconditions. 
+If any of the postconditions are not successfully asserted, it will again throw an error and terminate.
+
+This translation of the contract concept is very similar to the Hoare triple known from Hoare Logic, where the Hoare triple takes the form:
+
+\begin{equation}
+\{P\} Q \{R\}
+\end{equation}
+
+Where $P$ denotes what is known to be true before the operation, $Q$ denotes the operation, and $R$ denotes what needs to be true after the operation. Thereby $P$ are the precondition, $Q$ is the operation or sub-routine, and $R$ is the postcondition. 
+
+This similarity between Hoare triple and Design by Contract is an advantage for our solution.
+Since many testing methodologies and systems are built around the notion of Hoare Logic. 
+An example of this is the "triple-a"-method from Unit testing, which stand for \textbf{A}rrange, \textbf{A}ct, and \textbf{A}ssert.
+The idea is that if you construct your tests in a manner where you first arrange everything, i.e. preparing the unit for what you are about to test, then you perform the computation and lastly you assert that the operation behaved as expected. 
+This "triple-a"-method is also very similar to the "Given, When, Then"-method known from Behaviour Driven Development, where the tests are composed and arranged by Given a context, When a specific operation has run, Then we expect a specific change. 
+
+In Meyer's paper, he also introduces another part of the Design By Contract methodology, which is the Class Invariant. 
+The Class invariant concerns itself with what must always be true for all instances of a class (or in human contract terms, an instance of a particular service contract).
+An example could be that the postman, who is supposed to deliver the package, has a means of transportation both before the delivery (pre-condition) and after the delivery (post-condition).
+Invariants are thereby what must always be true independent of the operation.
+
+In our project, we can use the notion of invariants to ensure a couple of things. 
+An example could be a contract about searching, written in the "Given, When, Then" form it could be "As a Citizen, Given a book named Harry Potter, When I search Harry, Then I should see Harry Potter in the results".
+An invariant of this test could be the "as a Citizen" part since we need to be a citizen before the pre-condition that the book needs to exists and we need to still be a Citizen after the search results appear.
+This also means that we can test the opposite of the invariance which could be an executable test that ensures that when you are acting as anything else than a Citizen the application will show an error when trying to search.
+
+Another, maybe more abstract, way we can use invariants is to isolate our contracts from the implementation details.
+We can, therefore, state an invariant that we assume the underlying implementation of e.g. the data management system is tested and working.
+Therefore we need not test the data management system.
+If our tests postcondition can assert that a given change to the data has happened, we can assume it is persisted in the data management system.
+The reason we would be interested in such an assumption is that our project is focused on acceptance tests, therefore it would be beneficial to have them consider the system under test as a black box and only consider stimuli to and from the system.
+
+We can utilize Design by Contract in our solution, as a method for the customers to express the desired functionalities of the system and allow the developers to compile these into executable tests to run on the implementation. 
+This will allow the developers to constantly check whether their implementation is correct and sufficient concerning the needs of the customer. 
+It will allow for easier maintenance in the future, due to the possibility to assert whether new implementations or new services support the needs of the customer.
+
+This raises another problem. 
+How are we going to allow the customer to formulate the contracts? 
+They are not experts in software development, so to expect them to write out the test cases and think about all the aspects of the system under test, would be too much to ask.
+Therefore there is a need for a methodology for expressing these contracts such that a customer would be able to formulate them and would be able to do so in a feasible time frame.
