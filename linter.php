@@ -35,6 +35,9 @@ $linterRegex = array(
     "/\s(skeptic)/i"      => "sceptic",
     "/\s(vial)/i"         => "phial",
     "/\s(whiskey)/i"      => "whisky",
+    "/\s(artifacts)/i"    => "artefacts",
+    "/\s(behavior)/i"     => "behaviour",
+
 
     // Scrum
     "/(scrum master|Scrum master|scrum Master)/"                         => "Scrum Master",

@@ -1,0 +1,80 @@
+To determine if our application is easy to use and fulfils the expectations of our customers, we would like to conduct usability testing of the solution. 
+The use of usability tests would give a clear picture of our application, even in the early stages of the project.
+In the ISO 9241 standard the following definition of usability is given:
+\begin{quote}
+    \textbf{Usability} extent to which a system, product or service can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use. \cite{ISO9241}
+\end{quote}
+Testing on these aspects would provide the end customer with a more usable product, even early on in the project through continues delivery and would allow of more streamlined user experience throughout the solution.
+However, due to the Covid-19 pandemic, the ability to perform these usability tests were no longer available and thus the tests were only planned for later testing purposes which would occur before a final release.
+
+Below is an example of such usability tests, that should have been performed to test the usability and flow within the application.
+The test will mainly test the nine heuristics for usability defined by Molich R. and Nielsen J, \cite{Usability}.
+The test is designed to not indicate where the different elements are located on the screen, this ensures that the elements used in the test should be intuitive to find and interact with.
+
+Before the test can be performed, the test setup should firstly be agreed upon.
+However, since such a test could require rooms with specialized recording equipment, the final tests can not be planed in detail before said location is known.
+Likewise, the different roles of the operators can not be assigned beforehand, since the ability to serve as an observer may not be plausible, depending on the location.
+The test subject is, however, rather easy to define, since the expected users of the system are specified.
+The exact industry/company they work within may vary without interfering with the usability tests itself.
+
+\begin{figure}[H]
+    \begin{enumerate}
+        \item Open the Application called “Flutter Application Editor”
+        \item A login screen should be visible
+        \item Tap the username field
+        \item Enter “Graatand” on the keyboard
+        \item Tap the password field
+        \item Enter “Password” into the password field
+        \item Tap the login button
+        \item The application selecting screen should be visible after a few seconds of loading
+        \item Tap any of the showing applications
+        \item A new screen should be visible showing a dashboard
+    \end{enumerate}
+    \caption{Login usability test.}
+    \label{loginUsabilityTest}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{enumerate}
+        \item Perform the steps to login from \autoref{loginUsabilityTest}
+        \item Tap the “Show tasks” icon
+        \item A kanban board should be visible
+        \item Click the “+” icon
+        \item The new tasks screens should be shown
+        \item The create task button should be disabled and non-functional
+        \item Tap the task name field
+        \item Enter a name for the task
+        \item Tap the task description field
+        \item Enter a description for the task
+        \item Tap the priority drop-down box
+        \item Select a priority
+        \item Hide the keyboard
+        \item Perform the steps to create a screen from \autoref{createScreenUsabilityTest}
+        \item Tap the create task button
+        \item A box saying that the task was created successfully should be visible within a few seconds
+        \item Tap the “ok” button
+        \item The task screen should be visible
+        \item The newly created task should be visible in the “not started” column
+    \end{enumerate}
+    \caption{Create Task usability test.}
+    \label{createTaskUsabilityTest}
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \begin{enumerate}
+        \item Press the “Create Screen” button
+        \item Tap the screen name field
+        \item Enter a name for the screen
+        \item Tap the create screen button
+        \item A box saying that the screen has been created should be visible within a few seconds
+        \item Discard the box by pressing the “ok” button
+        \item The new task screen should be visible again, with all the information entered before
+        \item There should be some text saying which screen is selected
+        \item The create task button should now be enabled
+    \end{enumerate}
+    \caption{Create Screen usability test.}
+    \label{createScreenUsabilityTest}
+
+\end{figure}

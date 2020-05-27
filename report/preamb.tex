@@ -1,5 +1,9 @@
 \documentclass[a4paper,12pt,fleqn,oneside,openright]{memoir}   % Openright aabner kapitler paa hoejresider
 
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{lscape}
+
 \makeatletter
 %%%% PAKKER %%%%
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -100,6 +104,37 @@
 \usepackage{listings}            % Placer kildekode i dokumentet med \begin{lstlisting}...\end{lstlisting}
 \usepackage{listingsutf8}
 % Kode-style
+\definecolor{listingDartDocCommentColor}{rgb}{0.0,0.5,0.0}
+\definecolor{listingDartTodoColor}{rgb}{0.6,0.0,0.0}
+\definecolor{listingDartKeywordColor}{rgb}{0.1,0.0,0.5}
+\lstdefinestyle{Dart}{language=dart, frame=lr, rulecolor=\color{blue!80!black}}
+\renewcommand{\lstlistingname}{Snippet}
+\lstdefinelanguage{Dart} {
+  morekeywords={assert,break,case,catch,class,const,continue,default,do,else,
+    enum,extends,false,final,finally,for,if,in,is,new,null,rethrow,return,super,
+    switch,this,throw,true,try,var,void,while,with,abstract,as,deferred,dynamic,
+    export,external,factory,get,implements,import,library,operator,part,set,
+    static,typedef,async,async*,sync*,await,yield},
+  morekeywords=[2]{String,int,num},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[l][\color{listingDartDocCommentColor}\bfseries]{///},
+  morecomment=[l][\color{listingDartTodoColor}\bfseries]{//\ TODO},
+  morecomment=[l][\color{listingDartTodoColor}\bfseries]{///\ TODO},
+  morecomment=[s]{/*}{*/},
+  morecomment=[s][\color{listingDartTodoColor}\bfseries]{/*\ TODO}{*/},
+  morestring=[b]",
+  morestring=[b]',
+  morestring=[b]''',
+  %% doesn't work moredelim=*[s][\color{listingDartKeywordColor}\bfseries]{\{}{\}},
+  %% probably a solution http://tex.stackexchange.com/questions/152829/
+  extendedchars=true,
+  keywordstyle={\color{listingDartKeywordColor}},
+  keywordstyle=[2]{\color{blue}},
+  identifierstyle=\color{black},
+  breaklines={true},
+}
+
 \lstdefinestyle{Kotlin}{language=kotlin, frame=lr, rulecolor=\color{blue!80!black}}
 \renewcommand{\lstlistingname}{Snippet}
 \lstdefinelanguage{Kotlin}{
@@ -466,6 +501,7 @@ inputencoding=ansinew,
 \usepackage{caption,booktabs,array}
 \captionsetup{labelfont=bf}
 \captionsetup{format=hang}
+\captionsetup[figure]{font=small}
 
 \newcommand{\rowgroup}[1]{\hspace{-1em}#1}
 

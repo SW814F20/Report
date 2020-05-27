@@ -1,0 +1,21 @@
+\section{Progress of the Sprint}
+One of our goals is to \textit{Finalize the JSON format for the tablet application and the Test Generator}.
+This goal was straightforward to complete, as we just needed to find out, what parameters we wanted to test, and what would make sense to present for the Product Owner.
+Our JSON format is not so generic as we might want it to be, as we did only look at what parameters the given Flutter widget we looked at, took in.
+An example of this could be the Text widget in Flutter.
+This widget will have the content, e.g. what the text should be in the Text widget.
+We also needed a Key, which is something that Flutter uses to locate a given widget.
+This is useful for us, so we can test the specific widget.
+
+This JSON format is specific to Flutter, but if we were to make our solution more generic, and include more languages and framework, such as JavaScript, it will benefit us to find a better JSON format, so it makes sense to all the supported languages, that we might have.
+However, because of our MVP, and its features, we thought that it will do, but we wanted to have it in mind.
+
+To change the Test Generator and the screen editor, in regards to the new JSON format, it is somewhat trivial to do, as we just need to change some lines of code to have the same structure, and that it knows what to do in regards to creating the automated tests.
+The flow in our application is also trivial to do because we just need to introduce some new screens and navigate the user from one screen to another, which in Flutter, is straightforward to do.
+
+GitHub API was implemented to support the most common functionality provided by GitHub that is relevant to the communication between developers and Product Owner.
+When a Product Owner creates a new application in our app, a GitHub repository is automatically created.
+This ensures that every application in our app corresponds to a repository in GitHub. 
+When the Product Owner creates a new task, they are automatically translated into issues on the GitHub repository, which the developers can see and work on. 
+Any comments the developers might have regarding a given issue can be entered into the discussion on every thread, which then becomes visible to the Product Owner inside the app as was originally envisioned on~\autoref{FIG:mockupIssuesComments}.
+All this is made possible by our implementation of the GitHub API, which simplifies the process of creating issues and repositories for Product Owners, that otherwise would have to know how GitHub works and operates.
