@@ -88,6 +88,8 @@ $linterRegex = array(
 $formattingRules = [
     // Formatting
     "/((\\\\caption){((.)*(?<!\.))}\\n)/i" =>  "Captions must end with a period (.)",
+    "/(\s,)/i" => "Flying comma detected"
+
 ];
 
 $ignoreFiles = [
