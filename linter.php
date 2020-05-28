@@ -88,7 +88,8 @@ $linterRegex = array(
 $formattingRules = [
     // Formatting
     "/((\\\\caption){((.)*(?<!\.))}\\n)/i" =>  "Captions must end with a period (.)",
-    "/(\s,)/i" => "Flying comma detected"
+    "/(\s,)/i" => "Flying comma detected",
+    //"/(\s\.)/i" => "Flying point detected",
 
 ];
 
